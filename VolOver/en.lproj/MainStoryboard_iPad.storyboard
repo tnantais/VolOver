@@ -1,23 +1,196 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3083" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="rRG-ky-92T">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="4">
+        <!--View Controller-->
+        <scene sceneID="Kp7-iK-cXW">
             <objects>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5">
+                <viewController storyboardIdentifier="Main" id="rRG-ky-92T" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hel-Vw-XdU">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vpf-Tg-iV8">
+                                <items>
+                                    <navigationItem title="VolOver" id="zhW-DX-82z">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="play" id="O7e-cO-ATy">
+                                            <connections>
+                                                <action selector="playpauseAct:" destination="rRG-ky-92T" id="UhD-Qj-8iS"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Help" id="CkA-IP-trA">
+                                            <connections>
+                                                <segue destination="ZXz-fm-rHv" kind="popover" popoverAnchorBarButtonItem="CkA-IP-trA" id="VUh-1c-uom">
+                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                </segue>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQD-ky-EZS">
+                                <accessibility key="accessibilityConfiguration" label="Volume up"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="522" type="user" id="Nwb-Bu-Fwt"/>
+                                    <constraint firstAttribute="height" constant="334" type="user" id="x85-QM-0EV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="vUpAct:" destination="rRG-ky-92T" eventType="touchUpInside" id="4GJ-zk-lgc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZa-VJ-KX0">
+                                <accessibility key="accessibilityConfiguration" label="Volume down"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="vDownAct:" destination="rRG-ky-92T" eventType="touchUpInside" id="a67-YX-7Bz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQq-On-zGH">
+                                <accessibility key="accessibilityConfiguration" label="Full volume"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Full">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="vFullAct:" destination="rRG-ky-92T" eventType="touchUpInside" id="UyR-MY-V6c"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bHW-s0-xtX">
+                                <accessibility key="accessibilityConfiguration" label="Volume slider"/>
+                                <connections>
+                                    <action selector="volChanged:" destination="rRG-ky-92T" eventType="valueChanged" id="ljm-lg-Nyr"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0q-ik-1Vv">
+                                <accessibility key="accessibilityConfiguration" label="Mute volume"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Mute">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="vMuteAct:" destination="rRG-ky-92T" eventType="touchUpInside" id="y1u-gh-Cux"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vpf-Tg-iV8" firstAttribute="top" secondItem="Hel-Vw-XdU" secondAttribute="top" type="default" id="BHG-cG-97l"/>
+                            <constraint firstItem="bHW-s0-xtX" firstAttribute="leading" secondItem="M0q-ik-1Vv" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Djz-Gr-VMY"/>
+                            <constraint firstItem="BQD-ky-EZS" firstAttribute="leading" secondItem="TZa-VJ-KX0" secondAttribute="leading" type="user" id="Ds7-wm-NGY"/>
+                            <constraint firstAttribute="trailing" secondItem="BQD-ky-EZS" secondAttribute="trailing" constant="123" type="user" id="F7Q-Kf-eBC"/>
+                            <constraint firstItem="M0q-ik-1Vv" firstAttribute="leading" secondItem="Hel-Vw-XdU" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="KWV-xx-AxC"/>
+                            <constraint firstItem="Vpf-Tg-iV8" firstAttribute="trailing" secondItem="Hel-Vw-XdU" secondAttribute="trailing" type="user" id="LaM-IW-NOq"/>
+                            <constraint firstAttribute="bottom" secondItem="M0q-ik-1Vv" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="M6H-Ua-peD"/>
+                            <constraint firstItem="BQD-ky-EZS" firstAttribute="top" secondItem="Hel-Vw-XdU" secondAttribute="top" constant="164" type="user" id="PS6-Bf-udB"/>
+                            <constraint firstAttribute="trailing" secondItem="TZa-VJ-KX0" secondAttribute="trailing" constant="123" type="user" id="QgB-nv-Fu1"/>
+                            <constraint firstItem="BQD-ky-EZS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Hel-Vw-XdU" secondAttribute="top" constant="164" type="user" id="UcQ-oN-Lvd"/>
+                            <constraint firstItem="BQD-ky-EZS" firstAttribute="centerX" secondItem="Vpf-Tg-iV8" secondAttribute="centerX" type="user" id="VzZ-Ui-RI5"/>
+                            <constraint firstAttribute="bottom" secondItem="uQq-On-zGH" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="cJA-sK-63I"/>
+                            <constraint firstItem="TZa-VJ-KX0" firstAttribute="leading" secondItem="Hel-Vw-XdU" secondAttribute="leading" constant="123" type="user" id="chO-Ie-AhC"/>
+                            <constraint firstItem="TZa-VJ-KX0" firstAttribute="top" secondItem="BQD-ky-EZS" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="dNf-nL-Hm2"/>
+                            <constraint firstItem="TZa-VJ-KX0" firstAttribute="width" secondItem="BQD-ky-EZS" secondAttribute="width" type="user" id="dhQ-aR-W6t"/>
+                            <constraint firstItem="uQq-On-zGH" firstAttribute="leading" secondItem="bHW-s0-xtX" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="dt1-an-4FP"/>
+                            <constraint firstAttribute="bottom" secondItem="TZa-VJ-KX0" secondAttribute="bottom" constant="164" type="user" id="fzi-kK-lIf"/>
+                            <constraint firstItem="Vpf-Tg-iV8" firstAttribute="leading" secondItem="Hel-Vw-XdU" secondAttribute="leading" type="user" id="giQ-5v-xic"/>
+                            <constraint firstItem="TZa-VJ-KX0" firstAttribute="height" secondItem="BQD-ky-EZS" secondAttribute="height" type="user" id="lIn-xp-zrh"/>
+                            <constraint firstAttribute="trailing" secondItem="uQq-On-zGH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mxi-at-xxE"/>
+                            <constraint firstAttribute="bottom" secondItem="bHW-s0-xtX" secondAttribute="bottom" constant="30" id="nF0-LG-vc9"/>
+                            <constraint firstItem="BQD-ky-EZS" firstAttribute="leading" secondItem="Hel-Vw-XdU" secondAttribute="leading" constant="123" type="user" id="v2f-rW-p0l"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playpauseButton" destination="O7e-cO-ATy" id="hHL-SZ-wI2"/>
+                        <outlet property="volSlider" destination="bHW-s0-xtX" id="on9-6U-cLL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L6J-Bv-Foh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="292" y="-163"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Xmg-rz-YLU">
+            <objects>
+                <viewController id="ZXz-fm-rHv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Qu-7X-23T">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="551" translatesAutoresizingMaskIntoConstraints="NO" id="Rv0-Zx-kcu">
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="810" type="user" id="ID8-e9-5k7"/>
+                                    <constraint firstAttribute="width" constant="551" type="user" id="qjV-VB-VBc"/>
+                                </constraints>
+                                <string key="text">VolOver relies on the default Music application in iOS. In order for it to function properly, you must have at least one song in your music library. If VolOver doesn't work, select Play. This will play some music from your library. If you don't want the music to be heard, select Mute before selecting Play.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <string key="label">VolOver relies on the default Music app in iOS. In order for it to function properly, the Music app must be running in the background. If VolOver doesn't work, simply launch Music and come back to VolOver.</string>
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Rv0-Zx-kcu" secondAttribute="bottom" constant="97" type="user" id="00M-rS-bLu"/>
+                            <constraint firstItem="Rv0-Zx-kcu" firstAttribute="centerX" secondItem="2Qu-7X-23T" secondAttribute="centerX" type="user" id="I3p-M6-GdX"/>
+                            <constraint firstItem="Rv0-Zx-kcu" firstAttribute="centerY" secondItem="2Qu-7X-23T" secondAttribute="centerY" type="user" id="Udu-cB-Z6B"/>
+                            <constraint firstAttribute="trailing" secondItem="Rv0-Zx-kcu" secondAttribute="trailing" constant="108" type="user" id="gxP-mu-q8Q"/>
+                            <constraint firstItem="Rv0-Zx-kcu" firstAttribute="top" secondItem="2Qu-7X-23T" secondAttribute="top" constant="97" type="user" id="hBB-hX-cna"/>
+                            <constraint firstItem="Rv0-Zx-kcu" firstAttribute="leading" secondItem="2Qu-7X-23T" secondAttribute="leading" constant="109" type="user" id="lEF-Yb-oDO"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rv0-Zx-kcu" secondAttribute="trailing" constant="108" type="user" id="vfn-E3-ays"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CMf-i5-KZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1133" y="-201"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="exitHelp:"/>
+                <relationship kind="action" name="playpauseAct:"/>
+                <relationship kind="action" name="vDownAct:"/>
+                <relationship kind="action" name="vFullAct:"/>
+                <relationship kind="action" name="vMuteAct:"/>
+                <relationship kind="action" name="vUpAct:"/>
+                <relationship kind="action" name="volChanged:"/>
+                <relationship kind="outlet" name="playpauseButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="volSlider" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

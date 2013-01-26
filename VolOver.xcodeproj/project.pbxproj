@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5AA0EEBE16A47CF900E70D9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EEBD16A47CF900E70D9F /* UIKit.framework */; };
 		5AA0EEC016A47CF900E70D9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EEBF16A47CF900E70D9F /* Foundation.framework */; };
 		5AA0EEC216A47CF900E70D9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EEC116A47CF900E70D9F /* CoreGraphics.framework */; };
 		5AA0EEC816A47CF900E70D9F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0EEC616A47CF900E70D9F /* InfoPlist.strings */; };
@@ -20,10 +19,11 @@
 		5AA0EEDA16A47CF900E70D9F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0EED816A47CF900E70D9F /* MainStoryboard_iPad.storyboard */; };
 		5AA0EEDD16A47CF900E70D9F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0EEDC16A47CF900E70D9F /* ViewController.m */; };
 		5AA0EEE516A47CFA00E70D9F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EEE416A47CF900E70D9F /* SenTestingKit.framework */; };
-		5AA0EEE616A47CFA00E70D9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EEBD16A47CF900E70D9F /* UIKit.framework */; };
 		5AA0EEE716A47CFA00E70D9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EEBF16A47CF900E70D9F /* Foundation.framework */; };
 		5AA0EEEF16A47CFA00E70D9F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0EEED16A47CFA00E70D9F /* InfoPlist.strings */; };
 		5AA0EEF216A47CFA00E70D9F /* VolOverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0EEF116A47CFA00E70D9F /* VolOverTests.m */; };
+		5AA0EEFE16A4A6DD00E70D9F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EEFD16A4A6DD00E70D9F /* MediaPlayer.framework */; };
+		5AA0EF0416A4AAFC00E70D9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EF0316A4AAFC00E70D9F /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 
 /* Begin PBXFileReference section */
 		5AA0EEBA16A47CF900E70D9F /* VolOver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolOver.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AA0EEBD16A47CF900E70D9F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5AA0EEBF16A47CF900E70D9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AA0EEC116A47CF900E70D9F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5AA0EEC516A47CF900E70D9F /* VolOver-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VolOver-Info.plist"; sourceTree = "<group>"; };
@@ -60,6 +59,8 @@
 		5AA0EEEE16A47CFA00E70D9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5AA0EEF016A47CFA00E70D9F /* VolOverTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolOverTests.h; sourceTree = "<group>"; };
 		5AA0EEF116A47CFA00E70D9F /* VolOverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolOverTests.m; sourceTree = "<group>"; };
+		5AA0EEFD16A4A6DD00E70D9F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = "../../../../Library/Developer/Xcode/iOS DeviceSupport/6.1 (10B5126b)/Symbols/System/Library/Frameworks/MediaPlayer.framework"; sourceTree = "<group>"; };
+		5AA0EF0316A4AAFC00E70D9F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = "../../../../Library/Developer/Xcode/iOS DeviceSupport/6.1 (10B5126b)/Symbols/System/Library/Frameworks/UIKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +68,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AA0EEBE16A47CF900E70D9F /* UIKit.framework in Frameworks */,
 				5AA0EEC016A47CF900E70D9F /* Foundation.framework in Frameworks */,
 				5AA0EEC216A47CF900E70D9F /* CoreGraphics.framework in Frameworks */,
+				5AA0EEFE16A4A6DD00E70D9F /* MediaPlayer.framework in Frameworks */,
+				5AA0EF0416A4AAFC00E70D9F /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +80,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA0EEE516A47CFA00E70D9F /* SenTestingKit.framework in Frameworks */,
-				5AA0EEE616A47CFA00E70D9F /* UIKit.framework in Frameworks */,
 				5AA0EEE716A47CFA00E70D9F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +109,8 @@
 		5AA0EEBC16A47CF900E70D9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5AA0EEBD16A47CF900E70D9F /* UIKit.framework */,
+				5AA0EF0316A4AAFC00E70D9F /* UIKit.framework */,
+				5AA0EEFD16A4A6DD00E70D9F /* MediaPlayer.framework */,
 				5AA0EEBF16A47CF900E70D9F /* Foundation.framework */,
 				5AA0EEC116A47CF900E70D9F /* CoreGraphics.framework */,
 				5AA0EEE416A47CF900E70D9F /* SenTestingKit.framework */,
@@ -395,6 +397,7 @@
 		5AA0EEF616A47CFA00E70D9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VolOver/VolOver-Prefix.pch";
 				INFOPLIST_FILE = "VolOver/VolOver-Info.plist";
@@ -406,6 +409,7 @@
 		5AA0EEF716A47CFA00E70D9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VolOver/VolOver-Prefix.pch";
 				INFOPLIST_FILE = "VolOver/VolOver-Info.plist";
@@ -467,6 +471,7 @@
 				5AA0EEF716A47CFA00E70D9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AA0EEF816A47CFA00E70D9F /* Build configuration list for PBXNativeTarget "VolOverTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +480,7 @@
 				5AA0EEFA16A47CFA00E70D9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
