@@ -28,16 +28,6 @@
             [vControl pause];
             [vControl setVolume:volSlider.value];
         }
-        else if ([vControl playbackState] == MPMusicPlaybackStateStopped) {
-            MPMediaQuery *everything = [[MPMediaQuery alloc] init];
-            everything = [MPMediaQuery songsQuery];
-            [vControl setQueueWithQuery:everything];
-            [vControl setVolume:0.0];
-            [vControl play];
-            [NSThread sleepForTimeInterval:1.0f];
-            [vControl pause];
-            [vControl setVolume:volSlider.value];
-        }
         // These if statements initialise the volume.
         timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(pbChanged) userInfo:nil repeats:YES]; // See .h for comment.
         firstloadComplete = YES;
