@@ -24,12 +24,16 @@
         if ([vControl playbackState] == MPMusicPlaybackStatePaused) {
             [vControl setVolume:0.0];
             [vControl play];
-            [NSThread sleepForTimeInterval:1.0f];
-            [vControl pause];
-            [vControl setVolume:volSlider.value];
+            startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
         }
-        // These if statements initialise the volume.
-        timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(pbChanged) userInfo:nil repeats:YES]; // See .h for comment.
+        else if ([vControl playbackState] == MPMusicPlaybackStateStopped) {
+            [vControl setVolume:0.0];
+            MPMediaQuery *everything = [[MPMediaQuery alloc] init];
+            everything = [MPMediaQuery songsQuery];
+            [vControl setQueueWithQuery:everything];
+            [vControl play];
+            startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
+        }
         firstloadComplete = YES;
     }
 	// Do any additional setup after loading the view, typically from a nib.
@@ -41,37 +45,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)pbChanged { // Selector for timer.
+- (void)start { // Selector for startTimer.
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
-    if ([vControl playbackState] == MPMusicPlaybackStatePlaying) {
-        [playpauseButton setStyle:UIBarButtonItemStyleDone];
-    }
-    else if ([vControl playbackState] == MPMusicPlaybackStatePaused) {
-        [playpauseButton setStyle:UIBarButtonItemStyleBordered];
-    }
-    else if ([vControl playbackState] == MPMusicPlaybackStateStopped) {
-        [playpauseButton setStyle:UIBarButtonItemStyleBordered];
-    }
+    [vControl pause];
+    [vControl setVolume:volSlider.value];
 }
 
-- (IBAction)playpauseAct:(id)sender {
+- (IBAction)refreshAct:(id)sender {
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
-    if ([vControl playbackState] == MPMusicPlaybackStatePlaying) {
-        [vControl pause];
-    }
-    else if ([vControl playbackState] == MPMusicPlaybackStatePaused) {
+    if ([vControl playbackState] == MPMusicPlaybackStatePaused) {
+        [vControl setVolume:0.0];
         [vControl play];
+        startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
     }
     else if ([vControl playbackState] == MPMusicPlaybackStateStopped) {
+        [vControl setVolume:0.0];
         MPMediaQuery *everything = [[MPMediaQuery alloc] init];
         everything = [MPMediaQuery songsQuery];
         [vControl setQueueWithQuery:everything];
         [vControl play];
+        startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
     }
 }
 
-- (IBAction)exitHelp:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil]; // iPhone/iPod Touch only.
+- (IBAction)exitHelp:(id)sender { // iPhone/iPod Touch only.
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)vFullAct:(id)sender {
