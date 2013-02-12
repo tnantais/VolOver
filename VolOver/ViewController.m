@@ -36,6 +36,7 @@
         }
         firstloadComplete = YES;
     }
+    scanning = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(scan) userInfo:nil repeats:YES];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -43,6 +44,21 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)scan { // Selector for scanning.
+    if (inButton.accessibilityElementIsFocused) {
+        [inButton setHighlighted:YES];
+    }
+    else {
+        [inButton setHighlighted:NO];
+    }
+    if (decButton.accessibilityElementIsFocused) {
+        [decButton setHighlighted:YES];
+    }
+    else {
+        [decButton setHighlighted:NO];
+    }
 }
 
 - (void)start { // Selector for startTimer.

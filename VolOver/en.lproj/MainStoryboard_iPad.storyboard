@@ -110,6 +110,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="decButton" destination="pRn-QK-Bfe" id="lm2-zz-i7w"/>
+                        <outlet property="inButton" destination="tbb-8h-UL7" id="k6L-vh-EXi"/>
                         <outlet property="volSlider" destination="EYJ-Cr-ZLp" id="R8W-XA-qoU"/>
                     </connections>
                 </viewController>
@@ -152,21 +154,6 @@
             <point key="canvasLocation" x="715" y="-260"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="exitHelp:"/>
-                <relationship kind="action" name="refreshAct:"/>
-                <relationship kind="action" name="vDownAct:"/>
-                <relationship kind="action" name="vFullAct:"/>
-                <relationship kind="action" name="vMuteAct:"/>
-                <relationship kind="action" name="vUpAct:"/>
-                <relationship kind="action" name="volChanged:"/>
-                <relationship kind="outlet" name="volSlider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

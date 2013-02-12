@@ -108,6 +108,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="decButton" destination="9l3-FE-W04" id="k49-n6-gse"/>
+                        <outlet property="inButton" destination="cyJ-SM-aSc" id="VGW-Ls-IKu"/>
                         <outlet property="volSlider" destination="p7J-By-EZx" id="nJ2-lU-flZ"/>
                     </connections>
                 </viewController>
