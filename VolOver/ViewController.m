@@ -46,6 +46,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    MPMediaQuery *everything = [[MPMediaQuery alloc] init];
+    everything = [MPMediaQuery songsQuery];
+    if (everything == nil) { // If music library is empty.
+        UIAlertView *err = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"You must have at least one song in your music library to use VolOver." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [err show];
+    }
+}
+
 - (void)scan { // Selector for scanning.
     if (inButton.accessibilityElementIsFocused) {
         [inButton setHighlighted:YES];
@@ -84,10 +93,6 @@
     }
 }
 
-- (IBAction)exitHelp:(id)sender { // iPhone/iPod Touch only.
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (IBAction)vFullAct:(id)sender {
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     if (volSlider.value < 1.0) {
@@ -98,6 +103,11 @@
     else {
         [volSlider setValue:currentValue];
         [vControl setVolume:volSlider.value];
+    }
+    if (currentValue == 1.0) {
+        [volSlider setValue:0.5];
+        [vControl setVolume:volSlider.value];
+        currentValue = volSlider.value;
     }
 }
 
@@ -111,6 +121,11 @@
     else {
         [volSlider setValue:currentValue];
         [vControl setVolume:volSlider.value];
+    }
+    if (currentValue == 0.0) {
+        [volSlider setValue:0.5];
+        [vControl setVolume:volSlider.value];
+        currentValue = volSlider.value;
     }
 }
 

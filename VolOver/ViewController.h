@@ -20,7 +20,6 @@
     float currentValue; // This is for returning to the original volume after Mute and Full.
 }
 - (IBAction)refreshAct:(id)sender;
-- (IBAction)exitHelp:(id)sender;
 - (IBAction)vFullAct:(id)sender;
 - (IBAction)vMuteAct:(id)sender;
 - (IBAction)vUpAct:(id)sender;

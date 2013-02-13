@@ -50,12 +50,6 @@
                             </slider>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2Y-xD-IfM">
                                 <items>
-                                    <barButtonItem systemItem="refresh" id="wZK-SX-ze0">
-                                        <connections>
-                                            <action selector="refreshAct:" destination="2" id="VUh-XZ-2WJ"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="5C0-HW-9BG"/>
                                     <barButtonItem title="Mute" id="pc8-Uh-nfd">
                                         <connections>
                                             <action selector="vMuteAct:" destination="2" id="aPe-BF-Pv0"/>
@@ -67,11 +61,9 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="dSD-Yf-e3j"/>
-                                    <barButtonItem title="Help" id="fhp-kv-Sjo">
+                                    <barButtonItem systemItem="refresh" id="N4o-CK-2g8">
                                         <connections>
-                                            <segue destination="FrC-cu-Kbf" kind="popover" popoverAnchorBarButtonItem="fhp-kv-Sjo" id="wdS-rs-HJR">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
+                                            <action selector="refreshAct:" destination="2" id="Jx4-CQ-GBF"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -117,41 +109,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tVh-82-1Dq">
-            <objects>
-                <viewController id="FrC-cu-Kbf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7zQ-c7-t4q">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="728" translatesAutoresizingMaskIntoConstraints="NO" id="jzQ-tt-Unt">
-                                <accessibility key="accessibilityConfiguration">
-                                    <bool key="isElement" value="NO"/>
-                                </accessibility>
-                                <string key="text">VolOver relies on the default music application in iOS. In order for the application to work properly, you must have at least one song in your music library. The music doesn't have to be playing; it just has to be there.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                        <accessibility key="accessibilityConfiguration">
-                            <string key="label">VolOver relies on the default music application in iOS. In order for the application to work properly, you must have at least one song in your music library. The music doesn't have to be playing; it just has to be there.</string>
-                            <bool key="isElement" value="YES"/>
-                        </accessibility>
-                        <constraints>
-                            <constraint firstItem="jzQ-tt-Unt" firstAttribute="top" secondItem="7zQ-c7-t4q" secondAttribute="top" constant="20" symbolic="YES" type="default" id="7DO-Sz-3f8"/>
-                            <constraint firstAttribute="bottom" secondItem="jzQ-tt-Unt" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="8pj-BF-L7r"/>
-                            <constraint firstItem="jzQ-tt-Unt" firstAttribute="leading" secondItem="7zQ-c7-t4q" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Bq4-ji-F6r"/>
-                            <constraint firstAttribute="trailing" secondItem="jzQ-tt-Unt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="fJt-62-Wlp"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WC3-ZY-ghA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="715" y="-260"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
