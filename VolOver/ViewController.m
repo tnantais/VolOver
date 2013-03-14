@@ -36,7 +36,6 @@
         }
         firstloadComplete = YES;
     }
-    scanning = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(scan) userInfo:nil repeats:YES];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -52,21 +51,6 @@
     if (everything == nil) { // If music library is empty.
         UIAlertView *err = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"You must have at least one song in your music library to use VolOver." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [err show];
-    }
-}
-
-- (void)scan { // Selector for scanning.
-    if (inButton.accessibilityElementIsFocused) {
-        [inButton setHighlighted:YES];
-    }
-    else {
-        [inButton setHighlighted:NO];
-    }
-    if (decButton.accessibilityElementIsFocused) {
-        [decButton setHighlighted:YES];
-    }
-    else {
-        [decButton setHighlighted:NO];
     }
 }
 
