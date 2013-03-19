@@ -20,22 +20,19 @@
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [volSlider setValue:vControl.volume];
     currentValue = vControl.volume;
-    if (firstloadComplete == NO) {
-        if ([vControl playbackState] == MPMusicPlaybackStatePaused) {
-            [vControl setVolume:0.0];
-            [vControl play];
-            startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
-        }
-        else if ([vControl playbackState] == MPMusicPlaybackStateStopped) {
-            [vControl setVolume:0.0];
-            MPMediaQuery *everything = [[MPMediaQuery alloc] init];
-            everything = [MPMediaQuery songsQuery];
-            [vControl setQueueWithQuery:everything];
-            [vControl play];
-            startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
-        }
-        firstloadComplete = YES;
-    }
+	if ([vControl playbackState] == MPMusicPlaybackStatePaused) {
+		[vControl setVolume:0.0];
+		[vControl play];
+		startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
+	}
+	else if ([vControl playbackState] == MPMusicPlaybackStateStopped) {
+		[vControl setVolume:0.0];
+		MPMediaQuery *everything = [[MPMediaQuery alloc] init];
+		everything = [MPMediaQuery songsQuery];
+		[vControl setQueueWithQuery:everything];
+		[vControl play];
+		startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
+	}
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -54,46 +51,31 @@
     }
 }
 
+
+
+
+
+
+
+
+// methods
+
 - (void)start { // Selector for startTimer.
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl pause];
     [vControl setVolume:volSlider.value];
 }
 
-- (IBAction)refreshAct:(id)sender {
-    MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
-    if ([vControl playbackState] == MPMusicPlaybackStatePaused) {
-        [vControl setVolume:0.0];
-        [vControl play];
-        startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
-    }
-    else if ([vControl playbackState] == MPMusicPlaybackStateStopped) {
-        [vControl setVolume:0.0];
-        MPMediaQuery *everything = [[MPMediaQuery alloc] init];
-        everything = [MPMediaQuery songsQuery];
-        [vControl setQueueWithQuery:everything];
-        [vControl play];
-        startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
-    }
-}
 
-- (IBAction)vFullAct:(id)sender {
-    MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
-    if (volSlider.value < 1.0) {
-        currentValue = volSlider.value;
-        [volSlider setValue:1.0];
-        [vControl setVolume:volSlider.value];
-    }
-    else {
-        [volSlider setValue:currentValue];
-        [vControl setVolume:volSlider.value];
-    }
-    if (currentValue == 1.0) {
-        [volSlider setValue:0.5];
-        [vControl setVolume:volSlider.value];
-        currentValue = volSlider.value;
-    }
-}
+
+
+
+
+
+
+
+
+// button actions
 
 - (IBAction)vMuteAct:(id)sender {
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];

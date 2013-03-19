@@ -11,17 +11,28 @@
 
 @interface ViewController : UIViewController
 {
-    __weak IBOutlet UIButton *inButton;
-    __weak IBOutlet UIButton *decButton;
+	
+	
+	// outlets 
+	
     __weak IBOutlet UISlider *volSlider;
-    BOOL firstloadComplete; // This is for checking that the app isn't launching in viewDidLoad.
     NSTimer *startTimer; // This is to initialise the volume on launch.
-    float currentValue; // This is for returning to the original volume after Mute and Full.
+	
+	
+	// variables
+	
+    float currentValue; // This is for returning to the original volume after Mute.
+	
+	
 }
-- (IBAction)refreshAct:(id)sender;
-- (IBAction)vFullAct:(id)sender;
+
+
+// actions
+
 - (IBAction)vMuteAct:(id)sender;
 - (IBAction)vUpAct:(id)sender;
 - (IBAction)vDownAct:(id)sender;
 - (IBAction)volChanged:(id)sender;
+
+
 @end
