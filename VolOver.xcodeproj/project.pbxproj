@@ -31,6 +31,9 @@
 		5AA0EEF216A47CFA00E70D9F /* VolOverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0EEF116A47CFA00E70D9F /* VolOverTests.m */; };
 		5AA0EEFE16A4A6DD00E70D9F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EEFD16A4A6DD00E70D9F /* MediaPlayer.framework */; };
 		5AA0EF0416A4AAFC00E70D9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EF0316A4AAFC00E70D9F /* UIKit.framework */; };
+		F093C00F16FE15950039ADC2 /* VolHigh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F093C00E16FE15950039ADC2 /* VolHigh@2x.png */; };
+		F093C01216FE1C0F0039ADC2 /* VolLow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F093C01016FE1C0F0039ADC2 /* VolLow@2x.png */; };
+		F093C01316FE1C0F0039ADC2 /* VolMute@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F093C01116FE1C0F0039ADC2 /* VolMute@2x.png */; };
 		F098CDDB16FC9EB000B17B3D /* VolHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = F098CDD816FC9EB000B17B3D /* VolHigh.png */; };
 		F098CDDC16FC9EB000B17B3D /* VolLow.png in Resources */ = {isa = PBXBuildFile; fileRef = F098CDD916FC9EB000B17B3D /* VolLow.png */; };
 		F098CDDD16FC9EB000B17B3D /* VolMute.png in Resources */ = {isa = PBXBuildFile; fileRef = F098CDDA16FC9EB000B17B3D /* VolMute.png */; };
@@ -79,6 +82,9 @@
 		5AA0EEF116A47CFA00E70D9F /* VolOverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolOverTests.m; sourceTree = "<group>"; };
 		5AA0EEFD16A4A6DD00E70D9F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = "../../../../Library/Developer/Xcode/iOS DeviceSupport/6.1 (10B5126b)/Symbols/System/Library/Frameworks/MediaPlayer.framework"; sourceTree = "<group>"; };
 		5AA0EF0316A4AAFC00E70D9F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = "../../../../Library/Developer/Xcode/iOS DeviceSupport/6.1 (10B5126b)/Symbols/System/Library/Frameworks/UIKit.framework"; sourceTree = "<group>"; };
+		F093C00E16FE15950039ADC2 /* VolHigh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VolHigh@2x.png"; sourceTree = "<group>"; };
+		F093C01016FE1C0F0039ADC2 /* VolLow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VolLow@2x.png"; sourceTree = "<group>"; };
+		F093C01116FE1C0F0039ADC2 /* VolMute@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VolMute@2x.png"; sourceTree = "<group>"; };
 		F098CDD816FC9EB000B17B3D /* VolHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolHigh.png; sourceTree = "<group>"; };
 		F098CDD916FC9EB000B17B3D /* VolLow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolLow.png; sourceTree = "<group>"; };
 		F098CDDA16FC9EB000B17B3D /* VolMute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolMute.png; sourceTree = "<group>"; };
@@ -158,6 +164,9 @@
 		5AA0EEC416A47CF900E70D9F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F093C00E16FE15950039ADC2 /* VolHigh@2x.png */,
+				F093C01016FE1C0F0039ADC2 /* VolLow@2x.png */,
+				F093C01116FE1C0F0039ADC2 /* VolMute@2x.png */,
 				F098CDD816FC9EB000B17B3D /* VolHigh.png */,
 				F098CDD916FC9EB000B17B3D /* VolLow.png */,
 				F098CDDA16FC9EB000B17B3D /* VolMute.png */,
@@ -283,6 +292,9 @@
 				F098CDDB16FC9EB000B17B3D /* VolHigh.png in Resources */,
 				F098CDDC16FC9EB000B17B3D /* VolLow.png in Resources */,
 				F098CDDD16FC9EB000B17B3D /* VolMute.png in Resources */,
+				F093C00F16FE15950039ADC2 /* VolHigh@2x.png in Resources */,
+				F093C01216FE1C0F0039ADC2 /* VolLow@2x.png in Resources */,
+				F093C01316FE1C0F0039ADC2 /* VolMute@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
