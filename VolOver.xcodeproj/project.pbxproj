@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		5A2BDF0216F25DD9008D38B1 /* highlightedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A2BDF0016F25DD9008D38B1 /* highlightedButton.png */; };
 		5A2BDF0316F25DD9008D38B1 /* normalButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A2BDF0116F25DD9008D38B1 /* normalButton.png */; };
-		5A2BDF0816F26158008D38B1 /* icon-ipad-ret.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A2BDF0416F26158008D38B1 /* icon-ipad-ret.png */; };
-		5A2BDF0916F26158008D38B1 /* icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A2BDF0516F26158008D38B1 /* icon-ipad.png */; };
-		5A2BDF0A16F26158008D38B1 /* icon-iphone-ret.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A2BDF0616F26158008D38B1 /* icon-iphone-ret.png */; };
-		5A2BDF0B16F26158008D38B1 /* icon-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A2BDF0716F26158008D38B1 /* icon-iphone.png */; };
 		5A2BDF0E16F26315008D38B1 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2BDF0D16F26315008D38B1 /* CustomButton.m */; };
 		5AA0EEC016A47CF900E70D9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EEBF16A47CF900E70D9F /* Foundation.framework */; };
 		5AA0EEC216A47CF900E70D9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EEC116A47CF900E70D9F /* CoreGraphics.framework */; };
@@ -21,7 +17,6 @@
 		5AA0EECE16A47CF900E70D9F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0EECD16A47CF900E70D9F /* AppDelegate.m */; };
 		5AA0EED016A47CF900E70D9F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0EECF16A47CF900E70D9F /* Default.png */; };
 		5AA0EED216A47CF900E70D9F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0EED116A47CF900E70D9F /* Default@2x.png */; };
-		5AA0EED416A47CF900E70D9F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0EED316A47CF900E70D9F /* Default-568h@2x.png */; };
 		5AA0EED716A47CF900E70D9F /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0EED516A47CF900E70D9F /* MainStoryboard_iPhone.storyboard */; };
 		5AA0EEDA16A47CF900E70D9F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0EED816A47CF900E70D9F /* MainStoryboard_iPad.storyboard */; };
 		5AA0EEDD16A47CF900E70D9F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0EEDC16A47CF900E70D9F /* ViewController.m */; };
@@ -31,6 +26,14 @@
 		5AA0EEF216A47CFA00E70D9F /* VolOverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0EEF116A47CFA00E70D9F /* VolOverTests.m */; };
 		5AA0EEFE16A4A6DD00E70D9F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EEFD16A4A6DD00E70D9F /* MediaPlayer.framework */; };
 		5AA0EF0416A4AAFC00E70D9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EF0316A4AAFC00E70D9F /* UIKit.framework */; };
+		F090837C1760FB01007F15A3 /* central_speaker_down_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083741760FB01007F15A3 /* central_speaker_down_ipad.png */; };
+		F090837D1760FB01007F15A3 /* central_speaker_down_ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083751760FB01007F15A3 /* central_speaker_down_ipad@2x.png */; };
+		F090837E1760FB01007F15A3 /* central_speaker_down.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083761760FB01007F15A3 /* central_speaker_down.png */; };
+		F090837F1760FB01007F15A3 /* central_speaker_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083771760FB01007F15A3 /* central_speaker_down@2x.png */; };
+		F09083801760FB01007F15A3 /* central_speaker_up_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083781760FB01007F15A3 /* central_speaker_up_ipad.png */; };
+		F09083811760FB01007F15A3 /* central_speaker_up_ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083791760FB01007F15A3 /* central_speaker_up_ipad@2x.png */; };
+		F09083821760FB01007F15A3 /* central_speaker_up.png in Resources */ = {isa = PBXBuildFile; fileRef = F090837A1760FB01007F15A3 /* central_speaker_up.png */; };
+		F09083831760FB01007F15A3 /* central_speaker_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F090837B1760FB01007F15A3 /* central_speaker_up@2x.png */; };
 		F093C00F16FE15950039ADC2 /* VolHigh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F093C00E16FE15950039ADC2 /* VolHigh@2x.png */; };
 		F093C01216FE1C0F0039ADC2 /* VolLow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F093C01016FE1C0F0039ADC2 /* VolLow@2x.png */; };
 		F093C01316FE1C0F0039ADC2 /* VolMute@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F093C01116FE1C0F0039ADC2 /* VolMute@2x.png */; };
@@ -58,7 +61,7 @@
 		5A2BDF0716F26158008D38B1 /* icon-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-iphone.png"; sourceTree = "<group>"; };
 		5A2BDF0C16F26315008D38B1 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		5A2BDF0D16F26315008D38B1 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
-		5AA0EEBA16A47CF900E70D9F /* VolOver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolOver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA0EEBA16A47CF900E70D9F /* volover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = volover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA0EEBF16A47CF900E70D9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AA0EEC116A47CF900E70D9F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5AA0EEC516A47CF900E70D9F /* VolOver-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VolOver-Info.plist"; sourceTree = "<group>"; };
@@ -69,7 +72,6 @@
 		5AA0EECD16A47CF900E70D9F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5AA0EECF16A47CF900E70D9F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5AA0EED116A47CF900E70D9F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		5AA0EED316A47CF900E70D9F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5AA0EED616A47CF900E70D9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		5AA0EED916A47CF900E70D9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		5AA0EEDB16A47CF900E70D9F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 		5AA0EEF116A47CFA00E70D9F /* VolOverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolOverTests.m; sourceTree = "<group>"; };
 		5AA0EEFD16A4A6DD00E70D9F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = "../../../../Library/Developer/Xcode/iOS DeviceSupport/6.1 (10B5126b)/Symbols/System/Library/Frameworks/MediaPlayer.framework"; sourceTree = "<group>"; };
 		5AA0EF0316A4AAFC00E70D9F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = "../../../../Library/Developer/Xcode/iOS DeviceSupport/6.1 (10B5126b)/Symbols/System/Library/Frameworks/UIKit.framework"; sourceTree = "<group>"; };
+		F09083741760FB01007F15A3 /* central_speaker_down_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = central_speaker_down_ipad.png; sourceTree = "<group>"; };
+		F09083751760FB01007F15A3 /* central_speaker_down_ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "central_speaker_down_ipad@2x.png"; sourceTree = "<group>"; };
+		F09083761760FB01007F15A3 /* central_speaker_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = central_speaker_down.png; sourceTree = "<group>"; };
+		F09083771760FB01007F15A3 /* central_speaker_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "central_speaker_down@2x.png"; sourceTree = "<group>"; };
+		F09083781760FB01007F15A3 /* central_speaker_up_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = central_speaker_up_ipad.png; sourceTree = "<group>"; };
+		F09083791760FB01007F15A3 /* central_speaker_up_ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "central_speaker_up_ipad@2x.png"; sourceTree = "<group>"; };
+		F090837A1760FB01007F15A3 /* central_speaker_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = central_speaker_up.png; sourceTree = "<group>"; };
+		F090837B1760FB01007F15A3 /* central_speaker_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "central_speaker_up@2x.png"; sourceTree = "<group>"; };
 		F093C00E16FE15950039ADC2 /* VolHigh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VolHigh@2x.png"; sourceTree = "<group>"; };
 		F093C01016FE1C0F0039ADC2 /* VolLow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VolLow@2x.png"; sourceTree = "<group>"; };
 		F093C01116FE1C0F0039ADC2 /* VolMute@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VolMute@2x.png"; sourceTree = "<group>"; };
@@ -127,7 +137,7 @@
 		5AA0EEBB16A47CF900E70D9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5AA0EEBA16A47CF900E70D9F /* VolOver.app */,
+				5AA0EEBA16A47CF900E70D9F /* volover.app */,
 				5AA0EEE316A47CF900E70D9F /* VolOverTests.octest */,
 			);
 			name = Products;
@@ -164,6 +174,10 @@
 		5AA0EEC416A47CF900E70D9F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F09083701760F32E007F15A3 /* speaker image */,
+				F09083711760F33D007F15A3 /* program icons */,
+				F09083721760F347007F15A3 /* backgrounds */,
+				F09083731760F358007F15A3 /* button icons */,
 				F093C00E16FE15950039ADC2 /* VolHigh@2x.png */,
 				F093C01016FE1C0F0039ADC2 /* VolLow@2x.png */,
 				F093C01116FE1C0F0039ADC2 /* VolMute@2x.png */,
@@ -180,9 +194,6 @@
 				5AA0EEC616A47CF900E70D9F /* InfoPlist.strings */,
 				5AA0EEC916A47CF900E70D9F /* main.m */,
 				5AA0EECB16A47CF900E70D9F /* VolOver-Prefix.pch */,
-				5AA0EECF16A47CF900E70D9F /* Default.png */,
-				5AA0EED116A47CF900E70D9F /* Default@2x.png */,
-				5AA0EED316A47CF900E70D9F /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -206,6 +217,44 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F09083701760F32E007F15A3 /* speaker image */ = {
+			isa = PBXGroup;
+			children = (
+				F09083741760FB01007F15A3 /* central_speaker_down_ipad.png */,
+				F09083751760FB01007F15A3 /* central_speaker_down_ipad@2x.png */,
+				F09083761760FB01007F15A3 /* central_speaker_down.png */,
+				F09083771760FB01007F15A3 /* central_speaker_down@2x.png */,
+				F09083781760FB01007F15A3 /* central_speaker_up_ipad.png */,
+				F09083791760FB01007F15A3 /* central_speaker_up_ipad@2x.png */,
+				F090837A1760FB01007F15A3 /* central_speaker_up.png */,
+				F090837B1760FB01007F15A3 /* central_speaker_up@2x.png */,
+			);
+			name = "speaker image";
+			sourceTree = "<group>";
+		};
+		F09083711760F33D007F15A3 /* program icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "program icons";
+			sourceTree = "<group>";
+		};
+		F09083721760F347007F15A3 /* backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				5AA0EECF16A47CF900E70D9F /* Default.png */,
+				5AA0EED116A47CF900E70D9F /* Default@2x.png */,
+			);
+			name = backgrounds;
+			sourceTree = "<group>";
+		};
+		F09083731760F358007F15A3 /* button icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "button icons";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,7 +272,7 @@
 			);
 			name = VolOver;
 			productName = VolOver;
-			productReference = 5AA0EEBA16A47CF900E70D9F /* VolOver.app */;
+			productReference = 5AA0EEBA16A47CF900E70D9F /* volover.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5AA0EEE216A47CF900E70D9F /* VolOverTests */ = {
@@ -280,21 +329,24 @@
 				5AA0EEC816A47CF900E70D9F /* InfoPlist.strings in Resources */,
 				5AA0EED016A47CF900E70D9F /* Default.png in Resources */,
 				5AA0EED216A47CF900E70D9F /* Default@2x.png in Resources */,
-				5AA0EED416A47CF900E70D9F /* Default-568h@2x.png in Resources */,
 				5AA0EED716A47CF900E70D9F /* MainStoryboard_iPhone.storyboard in Resources */,
 				5AA0EEDA16A47CF900E70D9F /* MainStoryboard_iPad.storyboard in Resources */,
 				5A2BDF0216F25DD9008D38B1 /* highlightedButton.png in Resources */,
 				5A2BDF0316F25DD9008D38B1 /* normalButton.png in Resources */,
-				5A2BDF0816F26158008D38B1 /* icon-ipad-ret.png in Resources */,
-				5A2BDF0916F26158008D38B1 /* icon-ipad.png in Resources */,
-				5A2BDF0A16F26158008D38B1 /* icon-iphone-ret.png in Resources */,
-				5A2BDF0B16F26158008D38B1 /* icon-iphone.png in Resources */,
 				F098CDDB16FC9EB000B17B3D /* VolHigh.png in Resources */,
 				F098CDDC16FC9EB000B17B3D /* VolLow.png in Resources */,
 				F098CDDD16FC9EB000B17B3D /* VolMute.png in Resources */,
 				F093C00F16FE15950039ADC2 /* VolHigh@2x.png in Resources */,
 				F093C01216FE1C0F0039ADC2 /* VolLow@2x.png in Resources */,
 				F093C01316FE1C0F0039ADC2 /* VolMute@2x.png in Resources */,
+				F090837C1760FB01007F15A3 /* central_speaker_down_ipad.png in Resources */,
+				F090837D1760FB01007F15A3 /* central_speaker_down_ipad@2x.png in Resources */,
+				F090837E1760FB01007F15A3 /* central_speaker_down.png in Resources */,
+				F090837F1760FB01007F15A3 /* central_speaker_down@2x.png in Resources */,
+				F09083801760FB01007F15A3 /* central_speaker_up_ipad.png in Resources */,
+				F09083811760FB01007F15A3 /* central_speaker_up_ipad@2x.png in Resources */,
+				F09083821760FB01007F15A3 /* central_speaker_up.png in Resources */,
+				F09083831760FB01007F15A3 /* central_speaker_up@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +467,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -440,7 +492,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -455,7 +507,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VolOver/VolOver-Prefix.pch";
 				INFOPLIST_FILE = "VolOver/VolOver-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = volover;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -467,7 +520,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VolOver/VolOver-Prefix.pch";
 				INFOPLIST_FILE = "VolOver/VolOver-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = volover;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
