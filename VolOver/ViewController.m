@@ -64,7 +64,6 @@
 {
     if (IS_IPAD)
     {
-        NSLog(@"ipad");
         if (toInterfaceOrientation==UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation==UIInterfaceOrientationLandscapeRight)
         {
             backgroundView.frame = CGRectMake(0, 0, 1024, 748);
