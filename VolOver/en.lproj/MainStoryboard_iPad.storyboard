@@ -12,6 +12,10 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="Default.png" id="I9i-oQ-vp6">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pRn-QK-Bfe" customClass="CustomButton">
                                 <rect key="frame" x="72" y="941" width="33" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -69,20 +73,10 @@
                                     <action selector="vMuteAct:" destination="2" eventType="touchUpInside" id="nwq-0y-A1P"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="VolOver" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jrN-ri-FJ3">
-                                <rect key="frame" x="20" y="20" width="728" height="912"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <bool key="isElement" value="NO"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="100"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="I9i-oQ-vp6" id="VE3-nw-2Ag"/>
                         <outlet property="volSlider" destination="EYJ-Cr-ZLp" id="R8W-XA-qoU"/>
                     </connections>
                 </viewController>
@@ -91,6 +85,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Default.png" width="768" height="1004"/>
         <image name="VolHigh.png" width="25" height="25"/>
         <image name="VolLow.png" width="25" height="25"/>
         <image name="VolMute.png" width="25" height="25"/>
@@ -107,6 +102,7 @@
                 <relationship kind="action" name="vMuteAct:"/>
                 <relationship kind="action" name="vUpAct:"/>
                 <relationship kind="action" name="volChanged:"/>
+                <relationship kind="outlet" name="backgroundView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="volSlider" candidateClass="UISlider"/>
             </relationships>
         </class>

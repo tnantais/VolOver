@@ -8,6 +8,11 @@
 
 #import "ViewController.h"
 
+//handy macro for determining if running on an iPad
+#define IS_IPAD ([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+
+
+
 @interface ViewController ()
 
 @end
@@ -51,8 +56,40 @@
     }
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeRight || interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationPortrait);
+}
 
-
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (IS_IPAD)
+    {
+        NSLog(@"ipad");
+        if (toInterfaceOrientation==UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation==UIInterfaceOrientationLandscapeRight)
+        {
+            backgroundView.frame = CGRectMake(0, 0, 1024, 748);
+            backgroundView.image = [UIImage imageNamed:@"Default-Landscape.png"];
+        }
+        else if (toInterfaceOrientation==UIInterfaceOrientationPortrait || toInterfaceOrientation==UIInterfaceOrientationPortraitUpsideDown)
+        {
+            backgroundView.frame = CGRectMake(0, 0, 768, 1004);
+            backgroundView.image = [UIImage imageNamed:@"Default.png"];
+        }
+    }
+    else //iphone
+    {
+        if (toInterfaceOrientation==UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation==UIInterfaceOrientationLandscapeRight)
+        {
+            backgroundView.frame = CGRectMake(0, 0, 480, 320);
+            backgroundView.image = [UIImage imageNamed:@"iphonebackground-landscape.png"];
+        }
+        else if (toInterfaceOrientation==UIInterfaceOrientationPortrait || toInterfaceOrientation==UIInterfaceOrientationPortraitUpsideDown)
+        {
+            backgroundView.frame = CGRectMake(0,0,320,460);
+            backgroundView.image = [UIImage imageNamed:@"iphonebackground.png"];
+        }
+    }
+}
 
 
 
@@ -113,5 +150,10 @@
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl setVolume:volSlider.value];
     currentValue = volSlider.value;
+}
+- (void)viewDidUnload {
+    backgroundView = nil;
+    backgroundView = nil;
+    [super viewDidUnload];
 }
 @end

@@ -16,6 +16,7 @@
 	// outlets 
 	
     __weak IBOutlet UISlider *volSlider;
+    __weak IBOutlet UIImageView *backgroundView;
     NSTimer *startTimer; // This is to initialise the volume on launch.
 	
 	
