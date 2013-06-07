@@ -89,7 +89,7 @@
     </scenes>
     <resources>
         <image name="Default.png" width="768" height="1004"/>
-        <image name="highlightedButton.png" width="700" height="400"/>
+        <image name="highlightedButton.png" width="525" height="300"/>
         <image name="normalButton.png" width="700" height="400"/>
         <image name="volover_icons_down_ipad.png" width="74" height="74"/>
         <image name="volover_icons_down_ipad_focused.png" width="74" height="74"/>

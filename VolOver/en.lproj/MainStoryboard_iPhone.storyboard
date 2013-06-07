@@ -88,7 +88,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="highlightedButton.png" width="700" height="400"/>
+        <image name="highlightedButton.png" width="525" height="300"/>
         <image name="iphonebackground.png" width="321" height="461"/>
         <image name="normalButton.png" width="700" height="400"/>
         <image name="volover_icons_down.png" width="33" height="33"/>
