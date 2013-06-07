@@ -69,6 +69,14 @@
 		F093C00F16FE15950039ADC2 /* VolHigh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F093C00E16FE15950039ADC2 /* VolHigh@2x.png */; };
 		F093C01216FE1C0F0039ADC2 /* VolLow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F093C01016FE1C0F0039ADC2 /* VolLow@2x.png */; };
 		F093C01316FE1C0F0039ADC2 /* VolMute@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F093C01116FE1C0F0039ADC2 /* VolMute@2x.png */; };
+		F094AB1917620288008524C0 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1117620288008524C0 /* Icon-72.png */; };
+		F094AB1A17620288008524C0 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1217620288008524C0 /* Icon-72@2x.png */; };
+		F094AB1B17620288008524C0 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1317620288008524C0 /* Icon-100.png */; };
+		F094AB1C17620288008524C0 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1417620288008524C0 /* Icon-Small-50.png */; };
+		F094AB1D17620288008524C0 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1517620288008524C0 /* Icon-Small.png */; };
+		F094AB1E17620288008524C0 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1617620288008524C0 /* Icon-Small@2x.png */; };
+		F094AB1F17620288008524C0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1717620288008524C0 /* Icon.png */; };
+		F094AB2017620288008524C0 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1817620288008524C0 /* Icon@2x.png */; };
 		F098CDDB16FC9EB000B17B3D /* VolHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = F098CDD816FC9EB000B17B3D /* VolHigh.png */; };
 		F098CDDC16FC9EB000B17B3D /* VolLow.png in Resources */ = {isa = PBXBuildFile; fileRef = F098CDD916FC9EB000B17B3D /* VolLow.png */; };
 		F098CDDD16FC9EB000B17B3D /* VolMute.png in Resources */ = {isa = PBXBuildFile; fileRef = F098CDDA16FC9EB000B17B3D /* VolMute.png */; };
@@ -87,10 +95,6 @@
 /* Begin PBXFileReference section */
 		5A2BDF0016F25DD9008D38B1 /* highlightedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highlightedButton.png; sourceTree = "<group>"; };
 		5A2BDF0116F25DD9008D38B1 /* normalButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normalButton.png; sourceTree = "<group>"; };
-		5A2BDF0416F26158008D38B1 /* icon-ipad-ret.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-ipad-ret.png"; sourceTree = "<group>"; };
-		5A2BDF0516F26158008D38B1 /* icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-ipad.png"; sourceTree = "<group>"; };
-		5A2BDF0616F26158008D38B1 /* icon-iphone-ret.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-iphone-ret.png"; sourceTree = "<group>"; };
-		5A2BDF0716F26158008D38B1 /* icon-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-iphone.png"; sourceTree = "<group>"; };
 		5A2BDF0C16F26315008D38B1 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		5A2BDF0D16F26315008D38B1 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 		5AA0EEBA16A47CF900E70D9F /* volover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = volover.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +163,14 @@
 		F093C00E16FE15950039ADC2 /* VolHigh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VolHigh@2x.png"; sourceTree = "<group>"; };
 		F093C01016FE1C0F0039ADC2 /* VolLow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VolLow@2x.png"; sourceTree = "<group>"; };
 		F093C01116FE1C0F0039ADC2 /* VolMute@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VolMute@2x.png"; sourceTree = "<group>"; };
+		F094AB1117620288008524C0 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		F094AB1217620288008524C0 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		F094AB1317620288008524C0 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
+		F094AB1417620288008524C0 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		F094AB1517620288008524C0 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		F094AB1617620288008524C0 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		F094AB1717620288008524C0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		F094AB1817620288008524C0 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		F098CDD816FC9EB000B17B3D /* VolHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolHigh.png; sourceTree = "<group>"; };
 		F098CDD916FC9EB000B17B3D /* VolLow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolLow.png; sourceTree = "<group>"; };
 		F098CDDA16FC9EB000B17B3D /* VolMute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolMute.png; sourceTree = "<group>"; };
@@ -248,12 +260,6 @@
 				F098CDD816FC9EB000B17B3D /* VolHigh.png */,
 				F098CDD916FC9EB000B17B3D /* VolLow.png */,
 				F098CDDA16FC9EB000B17B3D /* VolMute.png */,
-				5A2BDF0416F26158008D38B1 /* icon-ipad-ret.png */,
-				5A2BDF0516F26158008D38B1 /* icon-ipad.png */,
-				5A2BDF0616F26158008D38B1 /* icon-iphone-ret.png */,
-				5A2BDF0716F26158008D38B1 /* icon-iphone.png */,
-				5A2BDF0016F25DD9008D38B1 /* highlightedButton.png */,
-				5A2BDF0116F25DD9008D38B1 /* normalButton.png */,
 				5AA0EEC516A47CF900E70D9F /* VolOver-Info.plist */,
 				5AA0EEC616A47CF900E70D9F /* InfoPlist.strings */,
 				5AA0EEC916A47CF900E70D9F /* main.m */,
@@ -299,6 +305,14 @@
 		F09083711760F33D007F15A3 /* program icons */ = {
 			isa = PBXGroup;
 			children = (
+				F094AB1717620288008524C0 /* Icon.png */,
+				F094AB1817620288008524C0 /* Icon@2x.png */,
+				F094AB1117620288008524C0 /* Icon-72.png */,
+				F094AB1217620288008524C0 /* Icon-72@2x.png */,
+				F094AB1517620288008524C0 /* Icon-Small.png */,
+				F094AB1617620288008524C0 /* Icon-Small@2x.png */,
+				F094AB1417620288008524C0 /* Icon-Small-50.png */,
+				F094AB1317620288008524C0 /* Icon-100.png */,
 			);
 			name = "program icons";
 			sourceTree = "<group>";
@@ -323,14 +337,16 @@
 		F09083731760F358007F15A3 /* button icons */ = {
 			isa = PBXGroup;
 			children = (
+				5A2BDF0116F25DD9008D38B1 /* normalButton.png */,
+				5A2BDF0016F25DD9008D38B1 /* highlightedButton.png */,
+				F090839A1761192B007F15A3 /* volover_icons_down.png */,
+				F090839B1761192B007F15A3 /* volover_icons_down@2x.png */,
 				F09083941761192B007F15A3 /* volover_icons_down_focused.png */,
 				F09083951761192B007F15A3 /* volover_icons_down_focused@2x.png */,
 				F09083961761192B007F15A3 /* volover_icons_down_ipad_focused.png */,
 				F09083971761192B007F15A3 /* volover_icons_down_ipad_focused@2x.png */,
 				F09083981761192B007F15A3 /* volover_icons_down_ipad.png */,
 				F09083991761192B007F15A3 /* volover_icons_down_ipad@2x.png */,
-				F090839A1761192B007F15A3 /* volover_icons_down.png */,
-				F090839B1761192B007F15A3 /* volover_icons_down@2x.png */,
 				F090839C1761192B007F15A3 /* volover_icons_mute_focused.png */,
 				F090839D1761192B007F15A3 /* volover_icons_mute_focused@2x.png */,
 				F090839E1761192B007F15A3 /* volover_icons_mute_ipad_focused.png */,
@@ -475,6 +491,14 @@
 				F09083C11761192B007F15A3 /* volover_icons_up_ipad@2x.png in Resources */,
 				F09083C21761192B007F15A3 /* volover_icons_up.png in Resources */,
 				F09083C31761192B007F15A3 /* volover_icons_up@2x.png in Resources */,
+				F094AB1917620288008524C0 /* Icon-72.png in Resources */,
+				F094AB1A17620288008524C0 /* Icon-72@2x.png in Resources */,
+				F094AB1B17620288008524C0 /* Icon-100.png in Resources */,
+				F094AB1C17620288008524C0 /* Icon-Small-50.png in Resources */,
+				F094AB1D17620288008524C0 /* Icon-Small.png in Resources */,
+				F094AB1E17620288008524C0 /* Icon-Small@2x.png in Resources */,
+				F094AB1F17620288008524C0 /* Icon.png in Resources */,
+				F094AB2017620288008524C0 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
