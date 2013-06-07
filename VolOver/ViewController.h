@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/CALayer.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "CustomButton.h"
 
 @interface ViewController : UIViewController
 {
@@ -16,6 +18,10 @@
 	// outlets 
 	
     __weak IBOutlet UISlider *volSlider;
+    __weak IBOutlet UIImageView *backgroundView;
+    __weak IBOutlet CustomButton *muteButton;
+    __weak IBOutlet CustomButton *lowerButton;
+    __weak IBOutlet CustomButton *higherButton;
     NSTimer *startTimer; // This is to initialise the volume on launch.
 	
 	

@@ -8,15 +8,26 @@
 
 #import "ViewController.h"
 
+//handy macro for determining if running on an iPad
+#define IS_IPAD ([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
+- (void)makeButtonRound:(UIButton*)button
+{
+    [button.layer setCornerRadius:(button.frame.size.width/8.0)];
+    button.layer.masksToBounds = YES;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [volSlider setValue:vControl.volume];
     currentValue = vControl.volume;
@@ -33,7 +44,10 @@
 		[vControl play];
 		startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
 	}
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self makeButtonRound:muteButton];
+    [self makeButtonRound:lowerButton];
+    [self makeButtonRound:higherButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,8 +65,39 @@
     }
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeRight || interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationPortrait);
+}
 
-
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (IS_IPAD)
+    {
+        if (toInterfaceOrientation==UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation==UIInterfaceOrientationLandscapeRight)
+        {
+            backgroundView.frame = CGRectMake(0, 0, 1024, 748);
+            backgroundView.image = [UIImage imageNamed:@"Default-Landscape.png"];
+        }
+        else if (toInterfaceOrientation==UIInterfaceOrientationPortrait || toInterfaceOrientation==UIInterfaceOrientationPortraitUpsideDown)
+        {
+            backgroundView.frame = CGRectMake(0, 0, 768, 1004);
+            backgroundView.image = [UIImage imageNamed:@"Default.png"];
+        }
+    }
+    else //iphone
+    {
+        if (toInterfaceOrientation==UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation==UIInterfaceOrientationLandscapeRight)
+        {
+            backgroundView.frame = CGRectMake(0, 0, 480, 320);
+            backgroundView.image = [UIImage imageNamed:@"iphonebackground-landscape.png"];
+        }
+        else if (toInterfaceOrientation==UIInterfaceOrientationPortrait || toInterfaceOrientation==UIInterfaceOrientationPortraitUpsideDown)
+        {
+            backgroundView.frame = CGRectMake(0,0,320,460);
+            backgroundView.image = [UIImage imageNamed:@"iphonebackground.png"];
+        }
+    }
+}
 
 
 
@@ -93,6 +138,8 @@
         [vControl setVolume:volSlider.value];
         currentValue = volSlider.value;
     }
+    
+    [sender performSelector:@selector(checkHighlight:) withObject:sender afterDelay:0];
 }
 
 - (IBAction)vUpAct:(id)sender {
@@ -100,6 +147,8 @@
     currentValue = volSlider.value;
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl setVolume:volSlider.value];
+    
+    [sender performSelector:@selector(checkHighlight:) withObject:sender afterDelay:0];
 }
 
 - (IBAction)vDownAct:(id)sender {
@@ -107,11 +156,21 @@
     currentValue = volSlider.value;
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl setVolume:volSlider.value];
+    
+    [sender performSelector:@selector(checkHighlight:) withObject:sender afterDelay:0];    
 }
 
 - (IBAction)volChanged:(id)sender {
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl setVolume:volSlider.value];
     currentValue = volSlider.value;
+}
+- (void)viewDidUnload {
+    backgroundView = nil;
+    backgroundView = nil;
+    muteButton = nil;
+    lowerButton = nil;
+    higherButton = nil;
+    [super viewDidUnload];
 }
 @end
