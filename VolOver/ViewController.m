@@ -11,17 +11,23 @@
 //handy macro for determining if running on an iPad
 #define IS_IPAD ([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 
-
-
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
+- (void)makeButtonRound:(UIButton*)button
+{
+    [button.layer setCornerRadius:(button.frame.size.width/8.0)];
+    button.layer.masksToBounds = YES;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [volSlider setValue:vControl.volume];
     currentValue = vControl.volume;
@@ -38,7 +44,10 @@
 		[vControl play];
 		startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
 	}
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self makeButtonRound:muteButton];
+    [self makeButtonRound:lowerButton];
+    [self makeButtonRound:higherButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -129,6 +138,8 @@
         [vControl setVolume:volSlider.value];
         currentValue = volSlider.value;
     }
+    
+    [sender performSelector:@selector(checkHighlight:) withObject:sender afterDelay:0];
 }
 
 - (IBAction)vUpAct:(id)sender {
@@ -136,6 +147,8 @@
     currentValue = volSlider.value;
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl setVolume:volSlider.value];
+    
+    [sender performSelector:@selector(checkHighlight:) withObject:sender afterDelay:0];
 }
 
 - (IBAction)vDownAct:(id)sender {
@@ -143,6 +156,8 @@
     currentValue = volSlider.value;
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl setVolume:volSlider.value];
+    
+    [sender performSelector:@selector(checkHighlight:) withObject:sender afterDelay:0];    
 }
 
 - (IBAction)volChanged:(id)sender {
@@ -153,6 +168,9 @@
 - (void)viewDidUnload {
     backgroundView = nil;
     backgroundView = nil;
+    muteButton = nil;
+    lowerButton = nil;
+    higherButton = nil;
     [super viewDidUnload];
 }
 @end
