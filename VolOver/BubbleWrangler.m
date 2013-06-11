@@ -151,6 +151,7 @@ extern CGFloat g_fViewWidth,g_fViewHeight;
     bubble.amplitude = 20.0+fBubbleRadius*2.0 -1.0*RANDOM_INT(0,20);
     bubble.phase = (1.0*RANDOM_INT(0,30))/5.0;
     bubble.period = 2.0-fBubbleRadius/40.0+(1.0*RANDOM_INT(0,10))/10.0;
+    bubble.pixelwidth = g_fViewWidth;
     bubble.visible = YES;
 }
 

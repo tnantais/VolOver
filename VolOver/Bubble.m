@@ -14,9 +14,7 @@
 @implementation Bubble
 
 @synthesize img;
-@synthesize period,amplitude,offset,speed,phase;
-
-extern CGFloat g_fViewWidth,g_fViewHeight;
+@synthesize period,amplitude,offset,speed,phase,pixelwidth;
 
 -(BOOL)loadImage:(NSString*) strName onParent:(UIView*)parent
 {
@@ -31,7 +29,7 @@ extern CGFloat g_fViewWidth,g_fViewHeight;
     {
         img.alpha = 1.0;
         CGRect newFrame = img.frame;
-        newFrame.origin = CGPointMake(newFrame.size.width/2.0, g_fViewHeight/2.0);
+        newFrame.origin = CGPointMake(0, 0);
         img.frame = newFrame;
         [parent addSubview:img];
     }
@@ -62,11 +60,9 @@ extern CGFloat g_fViewWidth,g_fViewHeight;
 {
     CGPoint loc = self.location;
     
-    CGFloat a = 2*kPi*period/g_fViewWidth;
+    CGFloat a = 2*kPi*period/pixelwidth;
 
     CGFloat deltaX = sqrtf(powf(speed*deltaT, 2.0)/(1.0 + powf(a*amplitude*cos(a*loc.x+phase), 2.0)));
-    //CGFloat deltaX = speed*deltaT;
-    //CGFloat deltaX = speed*deltaT / 2.0 + sqrtf(powf(speed*deltaT, 2.0)/(1.0 + powf(a*amplitude*cos(a*loc.x+phase), 2.0)));
 
     loc.x += deltaX;
     loc.y = amplitude*sin(a*loc.x+phase)+offset;

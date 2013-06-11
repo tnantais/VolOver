@@ -26,5 +26,6 @@
 @property (nonatomic,assign) CGFloat offset;
 @property (nonatomic,readonly) CGFloat radius;
 @property (nonatomic,assign) BOOL visible;
+@property (nonatomic,assign) CGFloat pixelwidth;
 
 @end
