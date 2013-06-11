@@ -68,7 +68,7 @@
     }
     
     //see if it's time to release a new bubble
-    if ([self flipCoin:(20 - intensity*18/100)])
+    if (intensity>0 && [self flipCoin:(20 - intensity*18/100)])
     {
         BOOL bFound = NO;
         i = 0;
@@ -185,12 +185,12 @@
     bubble.offset = box.origin.y + box.size.height/2.0;
     
     //speed
-    bubble.speed = box.size.width/7.0 - fBubbleRadius*(1.0*RANDOM_INT(5,9))/10.0 + 1.0*RANDOM_INT(0,50) + (1.0*intensity)/1.0;
+    bubble.speed = box.size.width/7.0 - fBubbleRadius*(1.0*RANDOM_INT(8,13))/10.0 + 1.0*RANDOM_INT(0,50) + (1.0*intensity)/1.0;
     if (bubble.speed<0.0)
         bubble.speed = 100.0;
     
     //amplitude
-    bubble.amplitude = box.size.height/30.0+fBubbleRadius*2.0 -1.0*RANDOM_INT(0,20);
+    bubble.amplitude = box.size.height/30.0+fBubbleRadius*1.0 -1.0*RANDOM_INT(0,20);
     if (bubble.amplitude>box.size.height/2.0)
     {
         bubble.amplitude /= 2.0;
