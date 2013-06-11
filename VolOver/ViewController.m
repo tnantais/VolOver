@@ -58,7 +58,7 @@ CGFloat g_fViewWidth = 0.0, g_fViewHeight = 0.0;
     
     bubbleWrangler = [[BubbleWrangler alloc] init];
     [bubbleWrangler loadImages:self.view];
-    bubbleWrangler.intensity = 49;
+    bubbleWrangler.intensity = 9;
     
 }
 
@@ -176,6 +176,22 @@ CGFloat g_fViewWidth = 0.0, g_fViewHeight = 0.0;
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl setVolume:volSlider.value];
     currentValue = volSlider.value;
+    int intensity = (int) (currentValue*100);
+    /*
+    if (intensity<20)
+    {
+        intensity = 0;
+    }
+    else if (intensity>70)
+    {
+        intensity = 99;
+    }
+    else
+    {
+        intensity = (intensity - 20) * 50 / 100;
+    }
+     */
+    bubbleWrangler.intensity = intensity;
 }
 - (void)viewDidUnload {
     backgroundView = nil;
