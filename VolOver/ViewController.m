@@ -17,8 +17,6 @@
 
 @implementation ViewController
 
-CGFloat g_fViewWidth = 0.0, g_fViewHeight = 0.0;
-
 - (void)makeButtonRound:(UIButton*)button
 {
     [button.layer setCornerRadius:(button.frame.size.width/8.0)];
@@ -61,14 +59,11 @@ CGFloat g_fViewWidth = 0.0, g_fViewHeight = 0.0;
     [self makeButtonRound:lowerButton];
     [self makeButtonRound:higherButton];
     
-    UIScreen *mainScreen = [UIScreen mainScreen];
-    
-    g_fViewWidth = [mainScreen bounds].size.width;
-    g_fViewHeight = [mainScreen bounds].size.height;
-    
     bubbleWrangler = [[BubbleWrangler alloc] init];
     [bubbleWrangler loadImages:self.view];
     [self updateBubblesFromSlider];
+    
+    bubbleWrangler.box = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning
@@ -118,6 +113,12 @@ CGFloat g_fViewWidth = 0.0, g_fViewHeight = 0.0;
             backgroundView.image = [UIImage imageNamed:@"iphonebackground.png"];
         }
     }
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    NSLog(@"rotate");
+    bubbleWrangler.box = self.view.bounds;
 }
 
 

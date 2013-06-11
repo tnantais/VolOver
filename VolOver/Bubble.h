@@ -16,7 +16,6 @@
 -(BOOL)loadImage:(NSString*) strName onParent:(UIView*)parent;
 -(void)tic:(CGFloat)deltaT;
 
-
 @property (nonatomic,retain) UIImageView* img;
 @property (nonatomic,assign) CGPoint location;
 @property (nonatomic,assign) CGFloat period;

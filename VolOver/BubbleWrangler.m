@@ -8,11 +8,9 @@
 
 #import "BubbleWrangler.h"
 
-extern CGFloat g_fViewWidth,g_fViewHeight;
-
 @implementation BubbleWrangler
 
-@synthesize intensity;
+@synthesize intensity,box;
 
 #define NUM_BUBBLE_TYPES 8
 #define NUM_BUBBLES (NUM_BUBBLE_TYPES*6)
@@ -63,7 +61,7 @@ extern CGFloat g_fViewWidth,g_fViewHeight;
         
         //see if this bubble has reached the end of the line
         CGPoint loc = bubble.location;
-        if (loc.x>g_fViewWidth+bubble.radius)
+        if (loc.x>box.size.width+bubble.radius)
         {
             bubble.visible = NO;
         }
@@ -144,14 +142,14 @@ extern CGFloat g_fViewWidth,g_fViewHeight;
 {
     CGFloat fBubbleRadius;
     
-    bubble.location = CGPointMake(-bubble.radius,g_fViewHeight/2.0);
-    bubble.offset = g_fViewHeight/2.0;
-    fBubbleRadius = bubble.radius;        
+    bubble.location = CGPointMake(-bubble.radius,(box.origin.y + box.size.height/2.0));
+    bubble.offset = box.origin.y + box.size.height/2.0;
+    fBubbleRadius = bubble.radius;
     bubble.speed = 100.0 - fBubbleRadius*(1.0*RANDOM_INT(5,9))/10.0 + 1.0*RANDOM_INT(0,50) + (1.0*intensity)/1.0;
     bubble.amplitude = 20.0+fBubbleRadius*2.0 -1.0*RANDOM_INT(0,20);
     bubble.phase = (1.0*RANDOM_INT(0,30))/5.0;
     bubble.period = 2.0-fBubbleRadius/40.0+(1.0*RANDOM_INT(0,10))/10.0;
-    bubble.pixelwidth = g_fViewWidth;
+    bubble.pixelwidth = box.size.width;
     bubble.visible = YES;
 }
 

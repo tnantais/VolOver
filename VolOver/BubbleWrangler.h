@@ -17,6 +17,7 @@
     -(void)loadImages:(UIView*)parent;
     -(void)launchBubble:(Bubble*)bubble;
 
-
 @property (nonatomic,assign) int intensity;
+@property (nonatomic,assign) CGRect box;
+
 @end
