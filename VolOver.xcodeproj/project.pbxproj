@@ -34,6 +34,8 @@
 		F08A7DD117674AE0004DF81B /* 55px_icon_hollow.png in Resources */ = {isa = PBXBuildFile; fileRef = F08A7DC917674AE0004DF81B /* 55px_icon_hollow.png */; };
 		F08A7DD217674AE0004DF81B /* 100px_icon_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = F08A7DCA17674AE0004DF81B /* 100px_icon_fill.png */; };
 		F08A7DD317674AE0004DF81B /* 100px_icon_hollow.png in Resources */ = {isa = PBXBuildFile; fileRef = F08A7DCB17674AE0004DF81B /* 100px_icon_hollow.png */; };
+		F08A7DD817674B90004DF81B /* Bubble.m in Sources */ = {isa = PBXBuildFile; fileRef = F08A7DD517674B90004DF81B /* Bubble.m */; };
+		F08A7DD917674B90004DF81B /* BubbleWrangler.m in Sources */ = {isa = PBXBuildFile; fileRef = F08A7DD717674B90004DF81B /* BubbleWrangler.m */; };
 		F090837C1760FB01007F15A3 /* central_speaker_down_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083741760FB01007F15A3 /* central_speaker_down_ipad.png */; };
 		F090837D1760FB01007F15A3 /* central_speaker_down_ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083751760FB01007F15A3 /* central_speaker_down_ipad@2x.png */; };
 		F090837E1760FB01007F15A3 /* central_speaker_down.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083761760FB01007F15A3 /* central_speaker_down.png */; };
@@ -136,6 +138,10 @@
 		F08A7DC917674AE0004DF81B /* 55px_icon_hollow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 55px_icon_hollow.png; sourceTree = "<group>"; };
 		F08A7DCA17674AE0004DF81B /* 100px_icon_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100px_icon_fill.png; sourceTree = "<group>"; };
 		F08A7DCB17674AE0004DF81B /* 100px_icon_hollow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100px_icon_hollow.png; sourceTree = "<group>"; };
+		F08A7DD417674B90004DF81B /* Bubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bubble.h; sourceTree = "<group>"; };
+		F08A7DD517674B90004DF81B /* Bubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bubble.m; sourceTree = "<group>"; };
+		F08A7DD617674B90004DF81B /* BubbleWrangler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleWrangler.h; sourceTree = "<group>"; };
+		F08A7DD717674B90004DF81B /* BubbleWrangler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleWrangler.m; sourceTree = "<group>"; };
 		F09083741760FB01007F15A3 /* central_speaker_down_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = central_speaker_down_ipad.png; sourceTree = "<group>"; };
 		F09083751760FB01007F15A3 /* central_speaker_down_ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "central_speaker_down_ipad@2x.png"; sourceTree = "<group>"; };
 		F09083761760FB01007F15A3 /* central_speaker_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = central_speaker_down.png; sourceTree = "<group>"; };
@@ -256,6 +262,10 @@
 				5A2BDF0D16F26315008D38B1 /* CustomButton.m */,
 				5AA0EED516A47CF900E70D9F /* MainStoryboard_iPhone.storyboard */,
 				5AA0EED816A47CF900E70D9F /* MainStoryboard_iPad.storyboard */,
+				F08A7DD417674B90004DF81B /* Bubble.h */,
+				F08A7DD517674B90004DF81B /* Bubble.m */,
+				F08A7DD617674B90004DF81B /* BubbleWrangler.h */,
+				F08A7DD717674B90004DF81B /* BubbleWrangler.m */,
 				5AA0EEDB16A47CF900E70D9F /* ViewController.h */,
 				5AA0EEDC16A47CF900E70D9F /* ViewController.m */,
 				5AA0EEC416A47CF900E70D9F /* Supporting Files */,
@@ -585,6 +595,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA0EEF216A47CFA00E70D9F /* VolOverTests.m in Sources */,
+				F08A7DD817674B90004DF81B /* Bubble.m in Sources */,
+				F08A7DD917674B90004DF81B /* BubbleWrangler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
