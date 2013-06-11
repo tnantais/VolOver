@@ -138,38 +138,114 @@
     return(rval);
 }
 
+-(CGFloat)getImageRadius:(int)imageNum
+{
+    
+    CGFloat rval;
+    
+    switch (imageNum)
+    {
+        case 0:
+            rval = 7.5;
+            break;
+        case 1:
+            rval = 7.5;
+            break;
+        case 2:
+            rval = 15;
+            break;
+        case 3:
+            rval = 15;
+            break;
+        case 4:
+            rval = 27.5;
+            break;
+        case 5:
+            rval = 27.5;
+            break;
+        case 6:
+            rval = 50;
+            break;
+        case 7:
+            rval = 50;
+            break;
+    }
+    
+    
+    return(rval);
+}
+
 -(void)launchBubble:(Bubble*)bubble
 {
     CGFloat fBubbleRadius;
     
     bubble.location = CGPointMake(-bubble.radius,(box.origin.y + box.size.height/2.0));
-    bubble.offset = box.origin.y + box.size.height/2.0;
     fBubbleRadius = bubble.radius;
-    bubble.speed = 100.0 - fBubbleRadius*(1.0*RANDOM_INT(5,9))/10.0 + 1.0*RANDOM_INT(0,50) + (1.0*intensity)/1.0;
+    
+    bubble.offset = box.origin.y + box.size.height/2.0;
+    
+    //speed
+    bubble.speed = box.size.width/7.0 - fBubbleRadius*(1.0*RANDOM_INT(5,9))/10.0 + 1.0*RANDOM_INT(0,50) + (1.0*intensity)/1.0;
+    if (bubble.speed<0.0)
+        bubble.speed = 100.0;
+    
+    //amplitude
     bubble.amplitude = 20.0+fBubbleRadius*2.0 -1.0*RANDOM_INT(0,20);
+    while (bubble.amplitude>box.size.height/2.0)
+    {
+        bubble.amplitude /= 2.0;
+    }
+    
+    //phase
     bubble.phase = (1.0*RANDOM_INT(0,30))/5.0;
+    
+    //period
     bubble.period = 2.0-fBubbleRadius/40.0+(1.0*RANDOM_INT(0,10))/10.0;
+    
+    
     bubble.pixelwidth = box.size.width;
     bubble.visible = YES;
 }
 
 -(void)loadImages:(UIView*)parent
 {
-    int i,j,count;
+    int count;
     Bubble *bubble;
     int nBubbleType;
+    UIScreen *screen = [UIScreen mainScreen];
+    CGFloat fScreenWidth = screen.bounds.size.width;
+    
+    //find the subscript of the maximum bubble size (screen width / radius must be greater than 10)
+    int nMaxAcceptableBubbleSub = 0;
+    BOOL bDone = NO;
+    while (!bDone)
+    {
+        if (nMaxAcceptableBubbleSub==NUM_BUBBLE_TYPES || fScreenWidth/[self getImageRadius:nMaxAcceptableBubbleSub]<10.0)
+        {
+            bDone = YES;
+        }
+        else
+        {
+            nMaxAcceptableBubbleSub++;
+        }
+    }
     
     count = 0;
-    for (i=0;i<NUM_BUBBLE_TYPES;i++)
+    int nNumOfEach = NUM_BUBBLES/nMaxAcceptableBubbleSub; //truncated
+    while (count<NUM_BUBBLES)
     {
-        for (j=0;j<(NUM_BUBBLES/NUM_BUBBLE_TYPES);j++)
+        bubble = [bubbles objectAtIndex:count];
+        if (count<nNumOfEach*nMaxAcceptableBubbleSub)
         {
-            bubble = [bubbles objectAtIndex:count];
-            nBubbleType = i;
-            [bubble loadImage:[self getImageName:nBubbleType] onParent:parent];
-            bubble.visible = NO;
-            count++;
+            nBubbleType = count/nNumOfEach;
         }
+        else //fill in the remainder with anything
+        {
+            nBubbleType = RANDOM_INT(0, nMaxAcceptableBubbleSub-1);
+        }
+        [bubble loadImage:[self getImageName:nBubbleType] onParent:parent];
+        bubble.visible = NO;
+        count++;
     }
     [NSTimer scheduledTimerWithTimeInterval:(1.0/30.0) target:self selector:@selector(timerfunc:) userInfo:nil repeats:YES];
 }
