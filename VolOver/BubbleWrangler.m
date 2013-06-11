@@ -190,17 +190,21 @@
         bubble.speed = 100.0;
     
     //amplitude
-    bubble.amplitude = 20.0+fBubbleRadius*2.0 -1.0*RANDOM_INT(0,20);
-    while (bubble.amplitude>box.size.height/2.0)
+    bubble.amplitude = box.size.height/30.0+fBubbleRadius*2.0 -1.0*RANDOM_INT(0,20);
+    if (bubble.amplitude>box.size.height/2.0)
     {
         bubble.amplitude /= 2.0;
+    }
+    else if (bubble.amplitude<0)
+    {
+        bubble.amplitude = box.size.height/30.0;
     }
     
     //phase
     bubble.phase = (1.0*RANDOM_INT(0,30))/5.0;
     
     //period
-    bubble.period = 2.0-fBubbleRadius/40.0+(1.0*RANDOM_INT(0,10))/10.0;
+    bubble.period = 2.0-fBubbleRadius/50.0+(1.0*RANDOM_INT(0,10))/10.0;
     
     
     bubble.pixelwidth = box.size.width;
@@ -231,7 +235,7 @@
     }
     
     count = 0;
-    int nNumOfEach = NUM_BUBBLES/nMaxAcceptableBubbleSub; //truncated
+    int nNumOfEach = NUM_BUBBLES/nMaxAcceptableBubbleSub; //integer math - truncated
     while (count<NUM_BUBBLES)
     {
         bubble = [bubbles objectAtIndex:count];
