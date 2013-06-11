@@ -32,7 +32,7 @@ extern CGFloat g_fViewWidth,g_fViewHeight;
         {
             bubble = [[Bubble alloc] init];
             [bubbles addObject:bubble];
-            [bubble release];
+//            [bubble release];
         }
         RANDOM_SEED();
         intensity = 0;
@@ -177,8 +177,8 @@ extern CGFloat g_fViewWidth,g_fViewHeight;
 
 - (void)dealloc
 {
-    [bubbles release];
-    [super dealloc];
+//    [bubbles release];
+//    [super dealloc];
 }
 
     

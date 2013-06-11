@@ -17,6 +17,8 @@
 
 @implementation ViewController
 
+CGFloat g_fViewWidth = 0.0, g_fViewHeight = 0.0;
+
 - (void)makeButtonRound:(UIButton*)button
 {
     [button.layer setCornerRadius:(button.frame.size.width/8.0)];
@@ -48,6 +50,16 @@
     [self makeButtonRound:muteButton];
     [self makeButtonRound:lowerButton];
     [self makeButtonRound:higherButton];
+    
+    UIScreen *mainScreen = [UIScreen mainScreen];
+    
+    g_fViewWidth = [mainScreen bounds].size.width;
+    g_fViewHeight = [mainScreen bounds].size.height;
+    
+    bubbleWrangler = [[BubbleWrangler alloc] init];
+    [bubbleWrangler loadImages:self.view];
+    bubbleWrangler.intensity = 49;
+    
 }
 
 - (void)didReceiveMemoryWarning

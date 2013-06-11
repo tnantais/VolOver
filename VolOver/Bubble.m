@@ -23,7 +23,7 @@ extern CGFloat g_fViewWidth,g_fViewHeight;
     BOOL bSuccess = YES;
     
     UIImage* image = [UIImage imageNamed:strName];
-    self.img = [[[UIImageView alloc] initWithImage:image] autorelease];
+    self.img = [[UIImageView alloc] initWithImage:image];
     
     bSuccess = img!=nil;
     

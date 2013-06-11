@@ -34,8 +34,8 @@
 		F08A7DD117674AE0004DF81B /* 55px_icon_hollow.png in Resources */ = {isa = PBXBuildFile; fileRef = F08A7DC917674AE0004DF81B /* 55px_icon_hollow.png */; };
 		F08A7DD217674AE0004DF81B /* 100px_icon_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = F08A7DCA17674AE0004DF81B /* 100px_icon_fill.png */; };
 		F08A7DD317674AE0004DF81B /* 100px_icon_hollow.png in Resources */ = {isa = PBXBuildFile; fileRef = F08A7DCB17674AE0004DF81B /* 100px_icon_hollow.png */; };
-		F08A7DD817674B90004DF81B /* Bubble.m in Sources */ = {isa = PBXBuildFile; fileRef = F08A7DD517674B90004DF81B /* Bubble.m */; };
-		F08A7DD917674B90004DF81B /* BubbleWrangler.m in Sources */ = {isa = PBXBuildFile; fileRef = F08A7DD717674B90004DF81B /* BubbleWrangler.m */; };
+		F08A7DDA17674DD0004DF81B /* BubbleWrangler.m in Sources */ = {isa = PBXBuildFile; fileRef = F08A7DD717674B90004DF81B /* BubbleWrangler.m */; };
+		F08A7DDB17674DD6004DF81B /* Bubble.m in Sources */ = {isa = PBXBuildFile; fileRef = F08A7DD517674B90004DF81B /* Bubble.m */; };
 		F090837C1760FB01007F15A3 /* central_speaker_down_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083741760FB01007F15A3 /* central_speaker_down_ipad.png */; };
 		F090837D1760FB01007F15A3 /* central_speaker_down_ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083751760FB01007F15A3 /* central_speaker_down_ipad@2x.png */; };
 		F090837E1760FB01007F15A3 /* central_speaker_down.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083761760FB01007F15A3 /* central_speaker_down.png */; };
@@ -587,6 +587,8 @@
 				5AA0EECE16A47CF900E70D9F /* AppDelegate.m in Sources */,
 				5AA0EEDD16A47CF900E70D9F /* ViewController.m in Sources */,
 				5A2BDF0E16F26315008D38B1 /* CustomButton.m in Sources */,
+				F08A7DDA17674DD0004DF81B /* BubbleWrangler.m in Sources */,
+				F08A7DDB17674DD6004DF81B /* Bubble.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,8 +597,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA0EEF216A47CFA00E70D9F /* VolOverTests.m in Sources */,
-				F08A7DD817674B90004DF81B /* Bubble.m in Sources */,
-				F08A7DD917674B90004DF81B /* BubbleWrangler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
