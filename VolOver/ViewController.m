@@ -25,6 +25,16 @@ CGFloat g_fViewWidth = 0.0, g_fViewHeight = 0.0;
     button.layer.masksToBounds = YES;
 }
 
+-(void)updateBubblesFromSlider
+{
+    int intensity = (int) (volSlider.value*100);
+    if (intensity<0)
+        intensity = 0;
+    if (intensity>99)
+        intensity = 99;
+    bubbleWrangler.intensity = intensity;
+}
+
 
 - (void)viewDidLoad
 {
@@ -58,8 +68,7 @@ CGFloat g_fViewWidth = 0.0, g_fViewHeight = 0.0;
     
     bubbleWrangler = [[BubbleWrangler alloc] init];
     [bubbleWrangler loadImages:self.view];
-    bubbleWrangler.intensity = 9;
-    
+    [self updateBubblesFromSlider];
 }
 
 - (void)didReceiveMemoryWarning
@@ -139,14 +148,17 @@ CGFloat g_fViewWidth = 0.0, g_fViewHeight = 0.0;
     if (volSlider.value > 0.0) {
         currentValue = volSlider.value;
         [volSlider setValue:0.0];
+        [self updateBubblesFromSlider];
         [vControl setVolume:volSlider.value];
     }
     else {
         [volSlider setValue:currentValue];
+        [self updateBubblesFromSlider];
         [vControl setVolume:volSlider.value];
     }
     if (currentValue == 0.0) {
         [volSlider setValue:0.5];
+        [self updateBubblesFromSlider];
         [vControl setVolume:volSlider.value];
         currentValue = volSlider.value;
     }
@@ -159,7 +171,7 @@ CGFloat g_fViewWidth = 0.0, g_fViewHeight = 0.0;
     currentValue = volSlider.value;
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl setVolume:volSlider.value];
-    
+    [self updateBubblesFromSlider];
     [sender performSelector:@selector(checkHighlight:) withObject:sender afterDelay:0];
 }
 
@@ -168,30 +180,15 @@ CGFloat g_fViewWidth = 0.0, g_fViewHeight = 0.0;
     currentValue = volSlider.value;
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl setVolume:volSlider.value];
-    
+    [self updateBubblesFromSlider];
     [sender performSelector:@selector(checkHighlight:) withObject:sender afterDelay:0];    
 }
 
 - (IBAction)volChanged:(id)sender {
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl setVolume:volSlider.value];
+    [self updateBubblesFromSlider];
     currentValue = volSlider.value;
-    int intensity = (int) (currentValue*100);
-    /*
-    if (intensity<20)
-    {
-        intensity = 0;
-    }
-    else if (intensity>70)
-    {
-        intensity = 99;
-    }
-    else
-    {
-        intensity = (intensity - 20) * 50 / 100;
-    }
-     */
-    bubbleWrangler.intensity = intensity;
 }
 - (void)viewDidUnload {
     backgroundView = nil;
