@@ -10,6 +10,9 @@
 #import <QuartzCore/CALayer.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "CustomButton.h"
+#import "Bubble.h"
+#import "BubbleWrangler.h"
+
 
 @interface ViewController : UIViewController
 {
@@ -28,8 +31,7 @@
 	// variables
 	
     float currentValue; // This is for returning to the original volume after Mute.
-	
-	
+    BubbleWrangler *bubbleWrangler;
 }
 
 

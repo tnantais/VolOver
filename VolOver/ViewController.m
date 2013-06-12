@@ -23,6 +23,16 @@
     button.layer.masksToBounds = YES;
 }
 
+-(void)updateBubblesFromSlider
+{
+    int intensity = (int) (volSlider.value*100);
+    if (intensity<0)
+        intensity = 0;
+    if (intensity>99)
+        intensity = 99;
+    bubbleWrangler.intensity = intensity;
+}
+
 
 - (void)viewDidLoad
 {
@@ -48,6 +58,12 @@
     [self makeButtonRound:muteButton];
     [self makeButtonRound:lowerButton];
     [self makeButtonRound:higherButton];
+    
+    bubbleWrangler = [[BubbleWrangler alloc] init];
+    [bubbleWrangler loadImages:self.view];
+    [self updateBubblesFromSlider];
+    
+    bubbleWrangler.box = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,6 +115,12 @@
     }
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    NSLog(@"rotate");
+    bubbleWrangler.box = self.view.bounds;
+}
+
 
 
 
@@ -127,14 +149,17 @@
     if (volSlider.value > 0.0) {
         currentValue = volSlider.value;
         [volSlider setValue:0.0];
+        [self updateBubblesFromSlider];
         [vControl setVolume:volSlider.value];
     }
     else {
         [volSlider setValue:currentValue];
+        [self updateBubblesFromSlider];
         [vControl setVolume:volSlider.value];
     }
     if (currentValue == 0.0) {
         [volSlider setValue:0.5];
+        [self updateBubblesFromSlider];
         [vControl setVolume:volSlider.value];
         currentValue = volSlider.value;
     }
@@ -147,7 +172,7 @@
     currentValue = volSlider.value;
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl setVolume:volSlider.value];
-    
+    [self updateBubblesFromSlider];
     [sender performSelector:@selector(checkHighlight:) withObject:sender afterDelay:0];
 }
 
@@ -156,13 +181,14 @@
     currentValue = volSlider.value;
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl setVolume:volSlider.value];
-    
+    [self updateBubblesFromSlider];
     [sender performSelector:@selector(checkHighlight:) withObject:sender afterDelay:0];    
 }
 
 - (IBAction)volChanged:(id)sender {
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     [vControl setVolume:volSlider.value];
+    [self updateBubblesFromSlider];
     currentValue = volSlider.value;
 }
 - (void)viewDidUnload {
