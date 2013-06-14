@@ -33,27 +33,37 @@
     bubbleWrangler.intensity = intensity;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
-    [volSlider setValue:vControl.volume];
-    currentValue = vControl.volume;
-	if ([vControl playbackState] == MPMusicPlaybackStatePaused) {
-		[vControl setVolume:0.0];
-		[vControl play];
-		startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
-	}
-	else if ([vControl playbackState] == MPMusicPlaybackStateStopped) {
-		[vControl setVolume:0.0];
-		MPMediaQuery *everything = [[MPMediaQuery alloc] init];
-		everything = [MPMediaQuery songsQuery];
-		[vControl setQueueWithQuery:everything];
-		[vControl play];
-		startTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start) userInfo:nil repeats:NO]; // See .h for comment.
-	}
+    
+    if (vControl!=nil)
+    {
+        [volSlider setValue:vControl.volume];
+        currentValue = vControl.volume;
+        if ([vControl playbackState] == MPMusicPlaybackStatePaused) {
+            float v = vControl.volume;
+            [vControl setVolume:0.0];
+            [NSThread sleepForTimeInterval:1];
+            [vControl play];
+            [NSThread sleepForTimeInterval:1];
+            [vControl pause];
+            [NSThread sleepForTimeInterval:1];
+            [vControl setVolume:v];
+        }
+        else if ([vControl playbackState] == MPMusicPlaybackStateStopped) {
+            float v = vControl.volume;
+            [vControl setVolume:0.0];
+            [NSThread sleepForTimeInterval:1];
+            [vControl play];
+            [NSThread sleepForTimeInterval:1];
+            [vControl pause];
+            [NSThread sleepForTimeInterval:1];
+            [vControl setVolume:v];
+        }
+    }
     
     [self makeButtonRound:muteButton];
     [self makeButtonRound:lowerButton];
@@ -127,51 +137,32 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    NSLog(@"rotate");
     bubbleWrangler.box = self.view.bounds;
 }
-
-
-
-
-
-// methods
-
-- (void)start { // Selector for startTimer.
-    MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
-    [vControl pause];
-    [vControl setVolume:volSlider.value];
-}
-
-
-
-
-
-
-
-
-
 
 // button actions
 
 - (IBAction)vMuteAct:(id)sender {
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
-    if (volSlider.value > 0.0) {
-        currentValue = volSlider.value;
-        [volSlider setValue:0.0];
-        [self updateBubblesFromSlider];
-        [vControl setVolume:volSlider.value];
-    }
-    else {
-        [volSlider setValue:currentValue];
-        [self updateBubblesFromSlider];
-        [vControl setVolume:volSlider.value];
-    }
-    if (currentValue == 0.0) {
-        [volSlider setValue:0.5];
-        [self updateBubblesFromSlider];
-        [vControl setVolume:volSlider.value];
-        currentValue = volSlider.value;
+    if (vControl!=nil)
+    {
+        if (volSlider.value > 0.0) {
+            currentValue = volSlider.value;
+            [volSlider setValue:0.0];
+            [self updateBubblesFromSlider];
+            [vControl setVolume:volSlider.value];
+        }
+        else {
+            [volSlider setValue:currentValue];
+            [self updateBubblesFromSlider];
+            [vControl setVolume:volSlider.value];
+        }
+        if (currentValue == 0.0) {
+            [volSlider setValue:0.5];
+            [self updateBubblesFromSlider];
+            [vControl setVolume:volSlider.value];
+            currentValue = volSlider.value;
+        }
     }
     
     [sender performSelector:@selector(checkHighlight:) withObject:sender afterDelay:0];
@@ -181,7 +172,10 @@
     [volSlider setValue:volSlider.value+0.1];
     currentValue = volSlider.value;
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
-    [vControl setVolume:volSlider.value];
+    if (vControl!=nil)
+    {
+        [vControl setVolume:volSlider.value];
+    }
     [self updateBubblesFromSlider];
     [sender performSelector:@selector(checkHighlight:) withObject:sender afterDelay:0];
 }
@@ -189,18 +183,26 @@
 - (IBAction)vDownAct:(id)sender {
     [volSlider setValue:volSlider.value-0.1];
     currentValue = volSlider.value;
+    
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
-    [vControl setVolume:volSlider.value];
+    if (vControl!=nil)
+    {
+        [vControl setVolume:volSlider.value];
+    }
     [self updateBubblesFromSlider];
     [sender performSelector:@selector(checkHighlight:) withObject:sender afterDelay:0];    
 }
 
 - (IBAction)volChanged:(id)sender {
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
-    [vControl setVolume:volSlider.value];
+    if (vControl!=nil)
+    {
+        [vControl setVolume:volSlider.value];
+    }
     [self updateBubblesFromSlider];
     currentValue = volSlider.value;
 }
+
 - (void)viewDidUnload {
     backgroundView = nil;
     backgroundView = nil;
