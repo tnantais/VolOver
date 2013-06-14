@@ -42,5 +42,8 @@
 - (IBAction)vDownAct:(id)sender;
 - (IBAction)volChanged:(id)sender;
 
+//forwards
+-(void)checkInterfaceOrientation:(UIInterfaceOrientation) toInterfaceOrientation;
+
 
 @end

@@ -72,6 +72,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self checkInterfaceOrientation:self.interfaceOrientation];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     MPMediaQuery *everything = [[MPMediaQuery alloc] init];
     everything = [MPMediaQuery songsQuery];
@@ -85,7 +90,7 @@
     return (interfaceOrientation == UIInterfaceOrientationLandscapeRight || interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+-(void)checkInterfaceOrientation:(UIInterfaceOrientation) toInterfaceOrientation
 {
     if (IS_IPAD)
     {
@@ -112,7 +117,12 @@
             backgroundView.frame = CGRectMake(0,0,320,460);
             backgroundView.image = [UIImage imageNamed:@"iphonebackground.png"];
         }
-    }
+    }    
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self checkInterfaceOrientation:toInterfaceOrientation];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
