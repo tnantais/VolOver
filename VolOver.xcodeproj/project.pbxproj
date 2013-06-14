@@ -84,9 +84,6 @@
 		F09083C11761192B007F15A3 /* volover_icons_up_ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083A91761192B007F15A3 /* volover_icons_up_ipad@2x.png */; };
 		F09083C21761192B007F15A3 /* volover_icons_up.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083AA1761192B007F15A3 /* volover_icons_up.png */; };
 		F09083C31761192B007F15A3 /* volover_icons_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F09083AB1761192B007F15A3 /* volover_icons_up@2x.png */; };
-		F093C00F16FE15950039ADC2 /* VolHigh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F093C00E16FE15950039ADC2 /* VolHigh@2x.png */; };
-		F093C01216FE1C0F0039ADC2 /* VolLow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F093C01016FE1C0F0039ADC2 /* VolLow@2x.png */; };
-		F093C01316FE1C0F0039ADC2 /* VolMute@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F093C01116FE1C0F0039ADC2 /* VolMute@2x.png */; };
 		F094AB1917620288008524C0 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1117620288008524C0 /* Icon-72.png */; };
 		F094AB1A17620288008524C0 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1217620288008524C0 /* Icon-72@2x.png */; };
 		F094AB1B17620288008524C0 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1317620288008524C0 /* Icon-100.png */; };
@@ -95,9 +92,6 @@
 		F094AB1E17620288008524C0 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1617620288008524C0 /* Icon-Small@2x.png */; };
 		F094AB1F17620288008524C0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1717620288008524C0 /* Icon.png */; };
 		F094AB2017620288008524C0 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F094AB1817620288008524C0 /* Icon@2x.png */; };
-		F098CDDB16FC9EB000B17B3D /* VolHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = F098CDD816FC9EB000B17B3D /* VolHigh.png */; };
-		F098CDDC16FC9EB000B17B3D /* VolLow.png in Resources */ = {isa = PBXBuildFile; fileRef = F098CDD916FC9EB000B17B3D /* VolLow.png */; };
-		F098CDDD16FC9EB000B17B3D /* VolMute.png in Resources */ = {isa = PBXBuildFile; fileRef = F098CDDA16FC9EB000B17B3D /* VolMute.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,9 +192,6 @@
 		F09083A91761192B007F15A3 /* volover_icons_up_ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volover_icons_up_ipad@2x.png"; sourceTree = "<group>"; };
 		F09083AA1761192B007F15A3 /* volover_icons_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volover_icons_up.png; sourceTree = "<group>"; };
 		F09083AB1761192B007F15A3 /* volover_icons_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volover_icons_up@2x.png"; sourceTree = "<group>"; };
-		F093C00E16FE15950039ADC2 /* VolHigh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VolHigh@2x.png"; sourceTree = "<group>"; };
-		F093C01016FE1C0F0039ADC2 /* VolLow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VolLow@2x.png"; sourceTree = "<group>"; };
-		F093C01116FE1C0F0039ADC2 /* VolMute@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VolMute@2x.png"; sourceTree = "<group>"; };
 		F094AB1117620288008524C0 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		F094AB1217620288008524C0 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		F094AB1317620288008524C0 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
@@ -209,9 +200,6 @@
 		F094AB1617620288008524C0 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		F094AB1717620288008524C0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		F094AB1817620288008524C0 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		F098CDD816FC9EB000B17B3D /* VolHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolHigh.png; sourceTree = "<group>"; };
-		F098CDD916FC9EB000B17B3D /* VolLow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolLow.png; sourceTree = "<group>"; };
-		F098CDDA16FC9EB000B17B3D /* VolMute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolMute.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +260,7 @@
 		5AA0EEC316A47CF900E70D9F /* VolOver */ = {
 			isa = PBXGroup;
 			children = (
+				5AA0EEC516A47CF900E70D9F /* VolOver-Info.plist */,
 				5AA0EECC16A47CF900E70D9F /* AppDelegate.h */,
 				5AA0EECD16A47CF900E70D9F /* AppDelegate.m */,
 				5A2BDF0C16F26315008D38B1 /* CustomButton.h */,
@@ -297,13 +286,6 @@
 				F09083711760F33D007F15A3 /* program icons */,
 				F09083721760F347007F15A3 /* backgrounds */,
 				F09083731760F358007F15A3 /* button icons */,
-				F093C00E16FE15950039ADC2 /* VolHigh@2x.png */,
-				F093C01016FE1C0F0039ADC2 /* VolLow@2x.png */,
-				F093C01116FE1C0F0039ADC2 /* VolMute@2x.png */,
-				F098CDD816FC9EB000B17B3D /* VolHigh.png */,
-				F098CDD916FC9EB000B17B3D /* VolLow.png */,
-				F098CDDA16FC9EB000B17B3D /* VolMute.png */,
-				5AA0EEC516A47CF900E70D9F /* VolOver-Info.plist */,
 				5AA0EEC616A47CF900E70D9F /* InfoPlist.strings */,
 				5AA0EEC916A47CF900E70D9F /* main.m */,
 				5AA0EECB16A47CF900E70D9F /* VolOver-Prefix.pch */,
@@ -511,12 +493,6 @@
 				5AA0EEDA16A47CF900E70D9F /* MainStoryboard_iPad.storyboard in Resources */,
 				5A2BDF0216F25DD9008D38B1 /* highlightedButton.png in Resources */,
 				5A2BDF0316F25DD9008D38B1 /* normalButton.png in Resources */,
-				F098CDDB16FC9EB000B17B3D /* VolHigh.png in Resources */,
-				F098CDDC16FC9EB000B17B3D /* VolLow.png in Resources */,
-				F098CDDD16FC9EB000B17B3D /* VolMute.png in Resources */,
-				F093C00F16FE15950039ADC2 /* VolHigh@2x.png in Resources */,
-				F093C01216FE1C0F0039ADC2 /* VolLow@2x.png in Resources */,
-				F093C01316FE1C0F0039ADC2 /* VolMute@2x.png in Resources */,
 				F090837C1760FB01007F15A3 /* central_speaker_down_ipad.png in Resources */,
 				F090837D1760FB01007F15A3 /* central_speaker_down_ipad@2x.png in Resources */,
 				F090837E1760FB01007F15A3 /* central_speaker_down.png in Resources */,
