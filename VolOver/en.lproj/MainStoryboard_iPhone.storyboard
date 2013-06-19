@@ -74,9 +74,14 @@
                                     <action selector="vMuteAct:" destination="2" eventType="touchUpInside" id="8R8-0T-HPS"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="UkO-M3-rqf" customClass="AccessibilityRedirectImage">
+                                <rect key="frame" x="0.0" y="443" width="319" height="10"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="accessibilityRedirect" destination="UkO-M3-rqf" id="1Lb-X1-NuE"/>
                         <outlet property="backgroundView" destination="W4Z-jT-0fO" id="2hZ-Nf-fNb"/>
                         <outlet property="higherButton" destination="cyJ-SM-aSc" id="WpZ-zB-v04"/>
                         <outlet property="lowerButton" destination="9l3-FE-W04" id="p0M-He-9vD"/>

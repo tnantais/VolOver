@@ -11,6 +11,13 @@
 //handy macro for determining if running on an iPad
 #define IS_IPAD ([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
+
 @interface ViewController ()
 
 @end
@@ -36,6 +43,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    lastControlWithFocus = nil;
     
     MPMusicPlayerController *vControl = [MPMusicPlayerController iPodMusicPlayer];
     
@@ -85,6 +94,83 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self checkInterfaceOrientation:self.interfaceOrientation];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(accessibilityFocusChanged:) name:AccessibilityElementFocusNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(accessibilityFocusLost:) name:AccessibilityElementLostFocusNotification object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AccessibilityElementFocusNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AccessibilityElementLostFocusNotification object:nil];
+}
+
+-(void)enableCatchAllControl:(BOOL)bEn
+{
+    if (bEn)
+    {
+        if (!(accessibilityRedirect.isAccessibilityElement))
+        {
+            accessibilityRedirect.isAccessibilityElement = YES;
+            //UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);
+        }
+    }
+    else
+    {
+        if (accessibilityRedirect.isAccessibilityElement)
+        {
+            accessibilityRedirect.isAccessibilityElement = NO;
+            //UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);
+        }
+    }
+}
+
+-(void)shiftFocusToMostRecentControl
+{
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0"))
+    {
+        if (lastControlWithFocus!=nil)
+        {
+            NSLog(@"shifting focus programmatically");
+            UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, lastControlWithFocus);
+        }
+    }
+    else
+    {
+        NSLog(@"incompatible device, using oldschool method");
+        accessibilityRedirect.isAccessibilityElement = NO;
+        UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);
+    }
+}
+
+-(void)checkForLossOfAccessibilityFocus
+{
+    NSLog(@"check for loss of acccessibility focus");
+    //if none of our controls is focused, we can assume that focus has shifted to someplace inaccessible like the status bar.  enable the catchall
+    if ( !([lowerButton accessibilityElementIsFocused] || [higherButton accessibilityElementIsFocused] || [muteButton accessibilityElementIsFocused]))
+    {
+        [self enableCatchAllControl:YES];
+    }
+}
+
+-(void)accessibilityFocusLost:(NSNotification*)notification
+{
+    [self performSelector:@selector(checkForLossOfAccessibilityFocus) withObject:nil afterDelay:1.5];
+}
+
+-(void)accessibilityFocusChanged:(NSNotification*)notification
+{
+    UIView *control = (UIView*)[notification object];
+    NSLog(@"ViewController> Accessibility focus changed");
+    if (control==lowerButton||control==higherButton||control==muteButton)
+    {
+        NSLog(@"setting last control with focus");
+        lastControlWithFocus = control;
+        [self enableCatchAllControl:NO];
+    }
+    else if (control==accessibilityRedirect)
+    {
+        [self performSelector:@selector(shiftFocusToMostRecentControl) withObject:nil afterDelay:0];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -209,6 +295,7 @@
     muteButton = nil;
     lowerButton = nil;
     higherButton = nil;
+    accessibilityRedirect = nil;
     [super viewDidUnload];
 }
 @end

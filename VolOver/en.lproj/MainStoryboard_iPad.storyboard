@@ -74,9 +74,14 @@
                                     <action selector="vMuteAct:" destination="2" eventType="touchUpInside" id="nwq-0y-A1P"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="bKL-r7-sKT" customClass="AccessibilityRedirectImage">
+                                <rect key="frame" x="0.0" y="961" width="768" height="15"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="accessibilityRedirect" destination="bKL-r7-sKT" id="7NJ-pA-7ez"/>
                         <outlet property="backgroundView" destination="I9i-oQ-vp6" id="VE3-nw-2Ag"/>
                         <outlet property="higherButton" destination="tbb-8h-UL7" id="Vmy-Te-BWK"/>
                         <outlet property="lowerButton" destination="pRn-QK-Bfe" id="aR1-3f-mgi"/>
@@ -100,6 +105,9 @@
         <image name="volover_icons_up_ipad_focused.png" width="75" height="75"/>
     </resources>
     <classes>
+        <class className="AccessibilityRedirectImage" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AccessibilityRedirectImage.h"/>
+        </class>
         <class className="CustomButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomButton.h"/>
         </class>
@@ -110,6 +118,7 @@
                 <relationship kind="action" name="vMuteAct:"/>
                 <relationship kind="action" name="vUpAct:"/>
                 <relationship kind="action" name="volChanged:"/>
+                <relationship kind="outlet" name="accessibilityRedirect" candidateClass="AccessibilityRedirectImage"/>
                 <relationship kind="outlet" name="backgroundView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="higherButton" candidateClass="CustomButton"/>
                 <relationship kind="outlet" name="lowerButton" candidateClass="CustomButton"/>
