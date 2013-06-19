@@ -11,6 +11,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "CustomButton.h"
 #import "Bubble.h"
+#import "AccessibilityRedirectImage.h"
 #import "BubbleWrangler.h"
 
 
@@ -25,6 +26,7 @@
     __weak IBOutlet CustomButton *muteButton;
     __weak IBOutlet CustomButton *lowerButton;
     __weak IBOutlet CustomButton *higherButton;
+    __weak IBOutlet AccessibilityRedirectImage *accessibilityRedirect;
     NSTimer *startTimer; // This is to initialise the volume on launch.
 	
 	
@@ -32,6 +34,7 @@
 	
     float currentValue; // This is for returning to the original volume after Mute.
     BubbleWrangler *bubbleWrangler;
+    UIView *lastControlWithFocus;
 }
 
 
