@@ -85,7 +85,20 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self checkInterfaceOrientation:self.interfaceOrientation];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(accessibilityFocusChanged:) name:AccessibilityElementFocusNotification object:nil];
 }
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AccessibilityElementFocusNotification object:nil];
+}
+
+-(void)accessibilityFocusChanged:(NSNotification*)notification
+{
+    UIControl *control = (UIControl*)[notification object];
+    NSLog(@"ViewController> Accessibility focus changed");
+}
+
 
 - (void)viewDidAppear:(BOOL)animated {
     MPMediaQuery *everything = [[MPMediaQuery alloc] init];
