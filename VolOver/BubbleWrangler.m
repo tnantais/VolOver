@@ -57,14 +57,13 @@
         if (bubble.visible)
         {
             [bubble tic:1.0/30.0];
-        }
-        
-        //see if this bubble has reached the end of the line
-        CGPoint loc = bubble.location;
-        if (loc.x>box.size.width+bubble.radius)
-        {
-            bubble.visible = NO;
-        }
+            //see if this bubble has reached the end of the line
+            CGPoint loc = bubble.location;
+            if (loc.x>box.size.width+bubble.radius)
+            {
+                bubble.visible = NO;
+            }
+        }        
     }
     
     //see if it's time to release a new bubble
@@ -205,6 +204,10 @@
     
     //period
     bubble.period = 2.0-fBubbleRadius/50.0+(1.0*RANDOM_INT(0,10))/10.0;
+    if (bubble.period<0.0)
+    {
+        bubble.period = 1.0;
+    }
     
     
     bubble.pixelwidth = box.size.width;

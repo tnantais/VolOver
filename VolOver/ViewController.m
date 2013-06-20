@@ -78,11 +78,6 @@
     [self makeButtonRound:lowerButton];
     [self makeButtonRound:higherButton];
     
-    bubbleWrangler = [[BubbleWrangler alloc] init];
-    [bubbleWrangler loadImages:self.view];
-    [self updateBubblesFromSlider];
-    
-    bubbleWrangler.box = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,6 +93,23 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(accessibilityFocusLost:) name:AccessibilityElementLostFocusNotification object:nil];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    MPMediaQuery *everything = [[MPMediaQuery alloc] init];
+    everything = [MPMediaQuery songsQuery];
+    if (everything == nil) { // If music library is empty.
+        UIAlertView *err = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"You must have at least one song in your music library to use VolOver." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [err show];
+    }
+    else
+    {
+        bubbleWrangler = [[BubbleWrangler alloc] init];
+        [bubbleWrangler loadImages:self.view];
+        [self updateBubblesFromSlider];
+        
+        bubbleWrangler.box = self.view.bounds;
+    }
+}
+
 - (void)viewDidDisappear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AccessibilityElementFocusNotification object:nil];
@@ -111,7 +123,6 @@
         if (!(accessibilityRedirect.isAccessibilityElement))
         {
             accessibilityRedirect.isAccessibilityElement = YES;
-            //UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);
         }
     }
     else
@@ -119,7 +130,6 @@
         if (accessibilityRedirect.isAccessibilityElement)
         {
             accessibilityRedirect.isAccessibilityElement = NO;
-            //UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);
         }
     }
 }
@@ -130,13 +140,11 @@
     {
         if (lastControlWithFocus!=nil)
         {
-            NSLog(@"shifting focus programmatically");
             UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, lastControlWithFocus);
         }
     }
     else
     {
-        NSLog(@"incompatible device, using oldschool method");
         accessibilityRedirect.isAccessibilityElement = NO;
         UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);
     }
@@ -144,7 +152,6 @@
 
 -(void)checkForLossOfAccessibilityFocus
 {
-    NSLog(@"check for loss of acccessibility focus");
     //if none of our controls is focused, we can assume that focus has shifted to someplace inaccessible like the status bar.  enable the catchall
     if ( !([lowerButton accessibilityElementIsFocused] || [higherButton accessibilityElementIsFocused] || [muteButton accessibilityElementIsFocused]))
     {
@@ -160,25 +167,15 @@
 -(void)accessibilityFocusChanged:(NSNotification*)notification
 {
     UIView *control = (UIView*)[notification object];
-    NSLog(@"ViewController> Accessibility focus changed");
+
     if (control==lowerButton||control==higherButton||control==muteButton)
     {
-        NSLog(@"setting last control with focus");
         lastControlWithFocus = control;
         [self enableCatchAllControl:NO];
     }
     else if (control==accessibilityRedirect)
     {
         [self performSelector:@selector(shiftFocusToMostRecentControl) withObject:nil afterDelay:0];
-    }
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    MPMediaQuery *everything = [[MPMediaQuery alloc] init];
-    everything = [MPMediaQuery songsQuery];
-    if (everything == nil) { // If music library is empty.
-        UIAlertView *err = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"You must have at least one song in your music library to use VolOver." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [err show];
     }
 }
 
