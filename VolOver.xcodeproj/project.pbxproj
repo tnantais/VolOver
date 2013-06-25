@@ -734,12 +734,16 @@
 		5AA0EEF716A47CFA00E70D9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Komodo OpenLab Inc. (K5Z36QAY2K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Komodo OpenLab Inc. (K5Z36QAY2K)";
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VolOver/VolOver-Prefix.pch";
 				INFOPLIST_FILE = "VolOver/VolOver-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = volover;
+				PROVISIONING_PROFILE = "C3380798-A3B1-4469-838E-F5F946AC755E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C3380798-A3B1-4469-838E-F5F946AC755E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
