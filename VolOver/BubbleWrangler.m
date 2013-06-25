@@ -140,7 +140,7 @@
 -(CGFloat)getImageRadius:(int)imageNum
 {
     
-    CGFloat rval;
+    CGFloat rval = 1.0;
     
     switch (imageNum)
     {

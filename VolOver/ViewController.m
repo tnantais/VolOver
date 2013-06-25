@@ -94,10 +94,9 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    MPMediaQuery *everything = [[MPMediaQuery alloc] init];
-    everything = [MPMediaQuery songsQuery];
+    MPMediaQuery *everything = [MPMediaQuery songsQuery];
     if (everything == nil) { // If music library is empty.
-        UIAlertView *err = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"You must have at least one song in your music library to use VolOver." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *err = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You must have at least one song in your music library to use VolOver." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [err show];
     }
     else
