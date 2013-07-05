@@ -27,7 +27,7 @@
 		5AA0EEFE16A4A6DD00E70D9F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EEFD16A4A6DD00E70D9F /* MediaPlayer.framework */; };
 		5AA0EF0416A4AAFC00E70D9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0EF0316A4AAFC00E70D9F /* UIKit.framework */; };
 		F085D56317722593001FF89F /* AccessibilityRedirectImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F085D56217722593001FF89F /* AccessibilityRedirectImage.m */; };
-		F08A1C3A1786F22900DABCD4 /* Default@2x~iphone-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = F08A1C391786F22900DABCD4 /* Default@2x~iphone-568h.png */; };
+		F08A1C3A1786F22900DABCD4 /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = F08A1C391786F22900DABCD4 /* Default-568h@2x~iphone.png */; };
 		F08A1C3C1786F23800DABCD4 /* iphonebackground-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F08A1C3B1786F23800DABCD4 /* iphonebackground-568h@2x.png */; };
 		F08A1C3E1786F24A00DABCD4 /* iphonebackground-landscape-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F08A1C3D1786F24A00DABCD4 /* iphonebackground-landscape-568h@2x.png */; };
 		F08A7DCC17674AE0004DF81B /* 15px_icon_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = F08A7DC417674AE0004DF81B /* 15px_icon_fill.png */; };
@@ -138,7 +138,7 @@
 		5AA0EF0316A4AAFC00E70D9F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = "../../../../Library/Developer/Xcode/iOS DeviceSupport/6.1 (10B5126b)/Symbols/System/Library/Frameworks/UIKit.framework"; sourceTree = "<group>"; };
 		F085D56117722593001FF89F /* AccessibilityRedirectImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessibilityRedirectImage.h; sourceTree = "<group>"; };
 		F085D56217722593001FF89F /* AccessibilityRedirectImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessibilityRedirectImage.m; sourceTree = "<group>"; };
-		F08A1C391786F22900DABCD4 /* Default@2x~iphone-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone-568h.png"; sourceTree = "<group>"; };
+		F08A1C391786F22900DABCD4 /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		F08A1C3B1786F23800DABCD4 /* iphonebackground-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphonebackground-568h@2x.png"; sourceTree = "<group>"; };
 		F08A1C3D1786F24A00DABCD4 /* iphonebackground-landscape-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphonebackground-landscape-568h@2x.png"; sourceTree = "<group>"; };
 		F08A7DC417674AE0004DF81B /* 15px_icon_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 15px_icon_fill.png; sourceTree = "<group>"; };
@@ -385,7 +385,7 @@
 				F09083851760FFD3007F15A3 /* Default-Landscape@2x.png */,
 				F0908389176100EA007F15A3 /* Default~iphone.png */,
 				F0908388176100EA007F15A3 /* Default@2x~iphone.png */,
-				F08A1C391786F22900DABCD4 /* Default@2x~iphone-568h.png */,
+				F08A1C391786F22900DABCD4 /* Default-568h@2x~iphone.png */,
 				F090838C176100EA007F15A3 /* iphonebackground.png */,
 				F090838D176100EA007F15A3 /* iphonebackground@2x.png */,
 				F08A1C3B1786F23800DABCD4 /* iphonebackground-568h@2x.png */,
@@ -571,7 +571,7 @@
 				F08A7DE91767D8A8004DF81B /* 55px_icon_hollow@2x.png in Resources */,
 				F08A7DEA1767D8A8004DF81B /* 100px_icon_fill@2x.png in Resources */,
 				F08A7DEB1767D8A8004DF81B /* 100px_icon_hollow@2x.png in Resources */,
-				F08A1C3A1786F22900DABCD4 /* Default@2x~iphone-568h.png in Resources */,
+				F08A1C3A1786F22900DABCD4 /* Default-568h@2x~iphone.png in Resources */,
 				F08A1C3C1786F23800DABCD4 /* iphonebackground-568h@2x.png in Resources */,
 				F08A1C3E1786F24A00DABCD4 /* iphonebackground-landscape-568h@2x.png in Resources */,
 			);
